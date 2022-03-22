@@ -1,0 +1,11 @@
+npm install --save
+
+Mongod --dbpath DB
+
+npm run-script development
+
+set MONGOURI="mongodb+srv://bryce_2302:Password12@cluster0.9ocoj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
+
+
+
+
