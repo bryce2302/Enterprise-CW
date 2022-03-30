@@ -83,11 +83,7 @@ export default function Home(){
               {jokes.joke}
               </div>
 
-              <div className='comments'>
-                  <Comments>
-                    
-                  </Comments>
-              </div>
+
 
             </Typography>
           </CardContent>
