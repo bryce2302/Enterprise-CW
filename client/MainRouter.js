@@ -9,7 +9,6 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-import App from './Shop/App'
 
 
 const MainRouter = () => {
@@ -23,7 +22,6 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
-        <Route path="/app" component={App}/>
       </Switch>
     </div>)
 }
