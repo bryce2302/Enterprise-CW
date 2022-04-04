@@ -1,7 +1,8 @@
-import Header from './Shop/Header';
-import Main from './Shop/Main';
-import Basket from './Shop/Basket';
-import data from '.Shop/data';
+import Header from './Header';
+import Main from './Main';
+import Basket from './Basket';
+import data from './data';
+
 import { useState } from 'react';
 
 function App() {
