@@ -9,7 +9,8 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-import Main from './Shop/Main'
+import Shop from './Shop/Shop'
+
 
 const MainRouter = () => {
     return (<div>
@@ -22,7 +23,7 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
-        <Route path="/Shop/Main" component={Main}/>
+        <Route path="/shop" component={Shop}/>
       </Switch>
     </div>)
 }
