@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: '#ededed',
     borderBottom: '1px solid #d0d0d0',
     '& a':{
-      color: '##ed3963'
+      color: '#ed3963'
     }
   }
 }))
