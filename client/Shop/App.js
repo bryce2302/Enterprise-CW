@@ -1,7 +1,7 @@
-import Header from './components/Header';
-import Main from './components/Main';
-import Basket from './components/Basket';
-import data from './data';
+import Header from './Shop/Header';
+import Main from './Shop/Main';
+import Basket from './Shop/Basket';
+import data from '.Shop/data';
 import { useState } from 'react';
 
 function App() {
