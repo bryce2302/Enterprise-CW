@@ -77,8 +77,10 @@ export default function Home(){
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo: Chompster</Typography>
           <CardContent>
             <Typography variant="body1" component="p">
-              Welcome to my CW home page.
-              Please explore the site and sign up/Log in to expreincve the full use of the site. :)
+              Welcome to the Love-for-the-Uglies webpage. 
+              Here we believe that all animals deserve attention and not just the cute ones. How can you not think that a naked mole rat is cuter than a kitten ??
+              Please explore the site and sign up/Log in to experience the full use of the site. :)
+              <hr></hr>
               <div>
               {jokes.joke}
               </div>
