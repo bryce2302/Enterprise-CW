@@ -23,7 +23,7 @@ const MainRouter = () => {
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
-        <Route path="/Shop/app" component={App}/>
+        <Route path="/app" component={App}/>
       </Switch>
     </div>)
 }
