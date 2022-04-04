@@ -77,7 +77,8 @@ export default function Home(){
           <Typography variant="body2" component="p" className={classes.credit} color="textSecondary">Photo: Chompster</Typography>
           <CardContent>
             <Typography variant="body1" component="p">
-              Welcome to Lab 6 home page.
+              Welcome to my CW home page.
+              Please explore the site and sign up/Log in to expreincve the full use of the site. :)
               <div>
               {jokes.joke}
               </div>
