@@ -10,7 +10,7 @@ import {Link, withRouter} from 'react-router-dom'
 
 const isActive = (history, path) => {
   if (history.location.pathname == path)
-    return {color: '#4937d4'}
+    return {color: '#2ac9b4'}
   else
     return {color: '#ffffff'}
 }
