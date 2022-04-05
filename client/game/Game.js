@@ -8,7 +8,7 @@ import turtle from './../assets/images/turtle.png'
 import goblin from './../assets/images/goblin.png'
 import rat from './../assets/images/rat.png'
 import cover from './../assets/images/cover.png'
-import './game.css'
+import './index.css'
 
 
 
@@ -21,7 +21,6 @@ const cardImages = [
     {"src" : rat}
 ]
 
-link.href = 'game.css'; 
 
 function Game() {
     const [cards,setCards] = useState ([])
