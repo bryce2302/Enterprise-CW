@@ -1,12 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
+import SingleCard from './game/SingleCard'
 import bat from './../assets/images/bat.png'
 import blobfish from './../assets/images/blobfish.png'
 import monkey from './../assets/images/monkey.png'
 import turtle from './../assets/images/turtle.png'
 import goblin from './../assets/images/goblin.png'
 import rat from './../assets/images/rat.png'
-import SingleCard from './game/SingleCard'
+
 
 
 
