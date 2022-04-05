@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import SingleCard from './game/SingleCard'
+import SingleCard from './SingleCard'
 import bat from './../assets/images/bat.png'
 import blobfish from './../assets/images/blobfish.png'
 import monkey from './../assets/images/monkey.png'
