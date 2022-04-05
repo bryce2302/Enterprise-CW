@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './../game/game.css'
+import ''
 import bat from './../assets/images/bat.png'
 import blobfish from './../assets/images/blobfish.png'
 import monkey from './../assets/images/monkey.png'
@@ -8,6 +8,9 @@ import turtle from './../assets/images/turtle.png'
 import goblin from './../assets/images/goblin.png'
 import rat from './../assets/images/rat.png'
 import cover from './../assets/images/cover.png'
+import './Game.css'
+
+
 
 const cardImages = [
     {"src" : bat},
@@ -18,10 +21,13 @@ const cardImages = [
     {"src" : rat}
 ]
 
+link.href = 'Game.css'; 
 
 function Game() {
     const [cards,setCards] = useState ([])
     const [turns, setTurns] = useState (0)
+
+    
 
 //shuffle cards
 const shuffleCards = () => {
