@@ -45,7 +45,7 @@ return(
             <div className ="card" key={card.id}>
                 <div>
                     <img className="front" src={card.src} alt="card front "/>
-                    <img className="back" cover alt="back card "/>
+                    <img className="back" src='./../assets/images/cover.png' alt="back card "/>
                 </div>
                 </div>
         ))}
