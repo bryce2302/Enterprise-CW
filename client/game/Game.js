@@ -26,12 +26,15 @@ const shuffleCards = () => {
         setTurns(0)
 }
 
-console.log(cards, turns)
+
 
 return(
     <div className = 'Game'>
         <h1>Magic Match</h1>
         <button onClick={shuffleCards}>New Game</button>
+
+    <div className
+
     </div>
 );
 }
