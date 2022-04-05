@@ -45,12 +45,7 @@ return(
 
     <div className ="card-grid">
         {cards.map(card => (
-            <div className ="card" key={card.id}>
-                <div>
-                    <img className="front" src={card.src} alt="card front "/>
-                    <img className="back" src={cover} alt="back card "/>
-                </div>
-                </div>
+            <SingleCard key = {card.id} card={card} />
         ))}
     </div>
     </div>
