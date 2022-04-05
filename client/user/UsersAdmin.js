@@ -69,6 +69,7 @@ export default function Users({ match }) {
                       <ListItemText primary={item.name}/>
                       <ListItemText primary={"About: " + item.about}/>
                       <ListItemText primary={"Administrator: " + item.admin}/>
+                      <ListItemText primary={"Delete: " + item.DeleteUser}/>
                       <ListItemSecondaryAction>
                       <IconButton>
                           <ArrowForward/>
