@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react'
 import './Game.css'
+import bat from './../assets/images/bat.png'
 
 const cardImages = [
-    {"src" : "./images/bat.png"},
+    {"src" : bat},
     {"src" : "C:/Users/Username/Enterprise-CW/Enterprise-CW/client/assets/images/blobfish.png"},
     {"src" : "./../assets/images/monkey.png"},
     {"src" : "/assests/images/turtle.png"},
