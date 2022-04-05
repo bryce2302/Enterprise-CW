@@ -9,7 +9,7 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-import Game from 'c:/Users/Username/Enterprise-CW/Enterprise-CW/src/components/Game'
+import Game from 'c:/Users/Username/Enterprise-CW/Enterprise-CW/src/components/containers/Game'
 
 
 
