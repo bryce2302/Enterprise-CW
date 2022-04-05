@@ -1,3 +1,5 @@
+import cover from './../assets/images/cover.png'
+
 export default function SingleCard({card}){
     return(
     <div className ="card">
