@@ -6,7 +6,7 @@ import monkey from './../assets/images/monkey.png'
 import turtle from './../assets/images/turtle.png'
 import goblin from './../assets/images/goblin.png'
 import rat from './../assets/images/rat.png'
-import SingleCard from './SingleCard'
+import SingleCard from './SingleCard.js'
 
 
 
