@@ -4,8 +4,8 @@ import './Game.css'
 
 const cardImages = [
     {"src" : "./images/bat.png"},
-    {"src" : "C:\Users\Username\Enterprise-CW\Enterprise-CW\client\assets\images\blobfish.png"},
-    {"src" : "/images/monkey.png"},
+    {"src" : "C:/Users/Username/Enterprise-CW/Enterprise-CW/client/assets/images/blobfish.png"},
+    {"src" : "./../assets/images/monkey.png"},
     {"src" : "/assests/images/turtle.png"},
     {"src" : "/assests/images/goblin.png"},
     {"src" : "/assests/images/rat.png"}
