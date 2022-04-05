@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import './Game.css'
+import './../game/Game.css'
 import bat from './../assets/images/bat.png'
 import blobfish from './../assets/images/blobfish.png'
 import monkey from './../assets/images/monkey.png'
