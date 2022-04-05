@@ -5,10 +5,11 @@ const auth = {
     if (typeof window == "undefined")
       return false
 
-    if (sessionStorage.getItem('jwt'))
+    if (sessionStorage.getItem('jwt')) 
       return JSON.parse(sessionStorage.getItem('jwt'))
     else
       return false
+
   },
   authenticate(jwt, cb) {
     if (typeof window !== "undefined")
