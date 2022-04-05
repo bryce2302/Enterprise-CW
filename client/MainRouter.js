@@ -9,7 +9,7 @@ import PrivateRoute from './auth/PrivateRoute'
 import Profile from './user/Profile'
 import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
-import Game from './src/containers/Game'
+import Game from 'src/containers/Game'
 
 
 const MainRouter = () => {
