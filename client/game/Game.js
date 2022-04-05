@@ -2,14 +2,20 @@ import React from 'react'
 import { useState } from 'react'
 import './Game.css'
 import bat from './../assets/images/bat.png'
+import blobfish from './../assets/images/blobfish.png'
+import monkey from './../assets/images/monkey.png'
+import turtle from './../assets/images/turtle.png'
+import goblin from './../assets/images/goblin.png'
+import rat from './../assets/images/rat.png'
+import cover from './../assets/images/cover.png'
 
 const cardImages = [
     {"src" : bat},
-    {"src" : "C:/Users/Username/Enterprise-CW/Enterprise-CW/client/assets/images/blobfish.png"},
-    {"src" : "./../assets/images/monkey.png"},
-    {"src" : "/assests/images/turtle.png"},
-    {"src" : "/assests/images/goblin.png"},
-    {"src" : "/assests/images/rat.png"}
+    {"src" : blobfish},
+    {"src" : monkey},
+    {"src" : turtle},
+    {"src" : goblin},
+    {"src" : rat}
 ]
 
 
@@ -39,7 +45,7 @@ return(
             <div className ="card" key={card.id}>
                 <div>
                     <img className="front" src={card.src} alt="card front "/>
-                    <img className="back" src = "/assests/images/cover.png" alt="back card "/>
+                    <img className="back" cover alt="back card "/>
                 </div>
                 </div>
         ))}
