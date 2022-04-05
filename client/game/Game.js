@@ -38,7 +38,7 @@ return(
             <div className ="card" key={card.id}>
                 <div>
                     <img className="front" src={card.src} alt="card front "/>
-                    <img className="back" src = "/assests/images/cover.png" alt="back card "/>
+                    <img className="back" src = "./assests/images/cover.png" alt="back card "/>
                 </div>
                 </div>
         ))}
