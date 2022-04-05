@@ -1,5 +1,6 @@
+import React from ' react'
+import { useState } from 'react'
 import './Game.css'
-import {useState} from 'react'
 
 
 const cardImages = [
