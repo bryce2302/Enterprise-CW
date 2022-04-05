@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react'
 import './Game.css'
 
-
 const cardImages = [
     {"src" : "./assests/images/bat.png"},
     {"src" : "./assests/images/blobfish.png"},
@@ -11,6 +10,7 @@ const cardImages = [
     {"src" : "./assests/images/goblin.png"},
     {"src" : "./assests/images/rat.png"}
 ]
+
 
 function Game() {
     const [cards,setCards] = useState ([])
@@ -33,8 +33,16 @@ return(
         <h1>Magic Match</h1>
         <button onClick={shuffleCards}>New Game</button>
 
-    
-
+    <div className ="card-grid">
+        {cards.map(card => (
+            <div className ="card" key={card.id}>
+                <div>
+                    <img className="front" src={card.src} alt="card front "/>
+                    <img className="back" src = "/assests/images/cover.png" alt="back card "/>
+                </div>
+                </div>
+        ))}
+    </div>
     </div>
 );
 }
