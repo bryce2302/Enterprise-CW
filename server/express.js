@@ -47,8 +47,8 @@ app.use(cors())
 
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', authRoutes)
-app.use('/', userRoutes)
 app.use('/', commentsRoutes)
+app.use('/', userRoutes)
 
 // proxy
 app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));

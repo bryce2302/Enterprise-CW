@@ -4,9 +4,9 @@ import authCtrl from '../controllers/auth.controller'
 
 const router = express.Router()
 
-// router.route('/api/comments')
-//   .get(authCtrl.requireSignin, commentsCtrl.list)
-//   .post(authCtrl.requireSignin, commentsCtrl.create)
+router.route('/api/comments')
+  .get(authCtrl.requireSignin, commentsCtrl.list)
+  .post(authCtrl.requireSignin, commentsCtrl.create)
 
 
 export default router
