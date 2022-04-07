@@ -2,17 +2,17 @@ import mongoose from 'mongoose'
 import crypto from 'crypto'
 
 const CommentsSchema = new mongoose.Schema({
-  UserID: {
+  userID: {
     type: String,
     trim: true,
     required: 'User id required'
   },
-  Name: {
+  name: {
     type: String,
     trim: true,
     required: 'Name is required'
   },
-  Comments: {
+  comments: {
     type: String,
     trim: true,
     required: 'Comment is required'

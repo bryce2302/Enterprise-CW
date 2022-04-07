@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
 const list = async (req, res) => {
   try {
-    let comments = await Comments.find().select('_id userID comment updated created')
+    let comments = await Comments.find().select('_id userID comments updated created')
     res.json(comments)
   } catch (err) {
     return res.status(400).json({
@@ -32,7 +32,7 @@ const list = async (req, res) => {
 
 const commentsByID = async (req, res, next, id) => {
   try {
-    let comments = await Comments.find(userId , id).select('_id userId comments likes created')
+    let comments = await Comments.find(userId , id).select('_id userID comments likes created')
     if (!comments)
       return res.status('400').json({
         error: "Comment not found"
