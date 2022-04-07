@@ -75,8 +75,8 @@ const read = (req, res) => {
 
 export default {
   create,
-  read,
   list,
+  read,
   commentsByID,
   update,
   remove
