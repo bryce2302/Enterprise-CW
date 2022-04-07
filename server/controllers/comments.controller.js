@@ -3,7 +3,7 @@ import extend from 'lodash/extend'
 import errorHandler from '../helpers/dbErrorHandler'
 
 const create = async (req, res) => {
-  const comments = new comments(req.body)
+  const comments = new Comments(req.body)
   try {
     await comments.save()
     return res.status(200).json({
