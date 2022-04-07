@@ -9,10 +9,11 @@ router.route('/api/comments')
   .post(authCtrl.requireSignin, commentsCtrl.create)
 
 router.route('/api/comments/:userId/:commentsId')
+  .get(authCtrl.requireSignin, authCtrl.hasAuthorization, commentsCtrl.read)
   .put(authCtrl.requireSignin, authCtrl.hasAuthorization, commentsCtrl.update)
   .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, commentsCtrl.remove)
 
-router.param('commentsId', commentsCtrl.commentsByID)
+router.param('comments/:userId', commentsCtrl.commentsByID)
 
 
 
