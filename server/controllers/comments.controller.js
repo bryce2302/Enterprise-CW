@@ -2,7 +2,6 @@ import Comments from '../models/comments.model'
 import extend from 'lodash/extend'
 import errorHandler from '../helpers/dbErrorHandler'
 
-
 const create = async (req, res) => {
   const comments = new comments(req.body)
   try {
@@ -29,7 +28,6 @@ const list = async (req, res) => {
 }
 
 
-
 const commentsByID = async (req, res, next, id) => {
   try {
     let comments = await Comments.find({userId : id}).select('_id userID comments likes created')
@@ -45,7 +43,6 @@ const commentsByID = async (req, res, next, id) => {
   }}
 
 
-
 const update = async (req, res) => {
   try {
     let comments = req.profile
@@ -58,7 +55,6 @@ const update = async (req, res) => {
     })
   }
 }
-
 
 const remove = async (req, res) => {
   try {
