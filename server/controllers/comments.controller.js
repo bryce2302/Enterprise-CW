@@ -2,12 +2,14 @@ import Comments from '../models/comments.model'
 import extend from 'lodash/extend'
 import errorHandler from '../helpers/dbErrorHandler'
 
+
+
 const create = async (req, res) => {
-  const comments = new Comments(req.body)
+  const comment = new Comments(req.body)
   try {
-    await comments.save()
+    await comment.save()
     return res.status(200).json({
-      message: "Successfull sent a comment!"
+      message: "Successfully signed up!"
     })
   } catch (err) {
     return res.status(400).json({
@@ -15,11 +17,12 @@ const create = async (req, res) => {
     })
   }
 }
- 
+
+
 const list = async (req, res) => {
   try {
-    let comments = await Comments.find()
-    res.json(comments)
+    let comment = await Comment.find().select('_id name userID comments likes')
+    res.json(comment)
   } catch (err) {
     return res.status(400).json({
       error: errorHandler.getErrorMessage(err)
