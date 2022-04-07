@@ -1,6 +1,6 @@
 import Comments from '../models/comments.model'
 import extend from 'lodash/extend'
-import errorHandler from './../helpers/dbErrorHandler'
+import errorHandler from '../helpers/dbErrorHandler'
 
 
 const create = async (req, res) => {

@@ -1,5 +1,5 @@
 import express from 'express'
-import commentsCtrl from '../controllers/comments.contoller'
+import commentsCtrl from '../controllers/comments.controller'
 import authCtrl from '../controllers/auth.controller'
 
 const router = express.Router()
