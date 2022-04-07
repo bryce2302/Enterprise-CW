@@ -8,6 +8,7 @@ import helmet from 'helmet'
 import Template from './../template'
 import userRoutes from './routes/user.routes'
 import authRoutes from './routes/auth.routes'
+import commentsRoutes from './routes/comments.routes'
 // modules for server side rendering
 import React from 'react'
 import ReactDOMServer from 'react-dom/server'
@@ -20,6 +21,8 @@ import theme from './../client/theme'
 
 //comment out before building for production
 import devBundle from './devBundle'
+
+
 
 
 const app = express()
@@ -45,6 +48,8 @@ app.use(cors())
 app.use('/dist', express.static(path.join(CURRENT_WORKING_DIR, 'dist')))
 app.use('/', authRoutes)
 app.use('/', userRoutes)
+app.use('/', commentsRoutes)
+
 // proxy
 app.use('/api/dadjoke', proxy('https://icanhazdadjoke.com/'));
 
