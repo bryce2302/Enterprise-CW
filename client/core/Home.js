@@ -85,13 +85,9 @@ export default function Home(){
               <div>
               {jokes.joke}
               </div>
-
-              <Comments />
-
-
-
             </Typography>
           </CardContent>
+          <Comments />
         </Card>
 
       
