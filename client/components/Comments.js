@@ -14,6 +14,7 @@ export default class Comments extends Comments {
         scriptEl.setAttribute("repo","bryce2302/Enterprise-CW")
         scriptEl.setAttribute("issue-term","url")
         scriptEl.setAttribute("theme","github-light")
+        this.commentBox.current.appendChild(scriptEl)
     }
 
     render(){
