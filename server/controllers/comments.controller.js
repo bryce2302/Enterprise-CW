@@ -9,7 +9,7 @@ const create = async (req, res) => {
   try {
     await comment.save()
     return res.status(200).json({
-      message: "Successfully signed up!"
+      message: "Successfully sent comment !"
     })
   } catch (err) {
     return res.status(400).json({
