@@ -36,16 +36,16 @@ const commentsByIDUser = async (req, res) => {
     let comment = await Comments.find({userID : user._id}).select('_id name userID comments likes ')
     if (!comment)
       return res.status('400').json({
-        error: "No comments not found for this User"
+        error: "No comments found for this User"
       })
       res.json(comment)
   } catch (err) {
-    return res.status(400).json({
+    return res.status('400').json({
       error: errorHandler.getErrorMessage(err)
     })
   }}
 
-  const commentsByID = async (req, res, next, id) => {
+  const commentsID = async (req, res, next, id) => {
     try {
       let comment = await Comments.findById(id)
       if (!comment)
@@ -96,7 +96,7 @@ export default {
   list,
   read,
   commentsByIDUser,
-  commentsByID,
+  commentsID,
   update,
   remove
 }
