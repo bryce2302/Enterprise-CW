@@ -50,7 +50,7 @@ const commentsByID_User = async (req, res) => {
       let comments = await Comments.findById(id)
       if (!comments)
         return res.status('400').json({
-          error: "User not found"
+          error: "comment not found"
         })
       req.profile = comments
       next()
