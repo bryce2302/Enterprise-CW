@@ -56,7 +56,7 @@ const commentsByID_User = async (req, res) => {
       next()
     } catch (err) {
       return res.status('400').json({
-        error: "Could not retrieve user"
+        error: "Could not retrieve comment"
       })
     }
   }
