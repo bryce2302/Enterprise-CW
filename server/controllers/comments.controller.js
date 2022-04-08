@@ -31,9 +31,9 @@ const list = async (req, res) => {
 }
 
 
-const commentsByID = async (req, res, next, id) => {
+const commentsByID_User = async (req, res) => {
   try {
-    let comments = await Comments.find({userId : id}).select('_id userID comments likes created')
+    let comments = await Comments.find({userId : user._id}).select('_id userID comments likes created')
     if (!comments)
       return res.status('400').json({
         error: "Comment not found"
@@ -45,6 +45,21 @@ const commentsByID = async (req, res, next, id) => {
     })
   }}
 
+  const commentsByID = async (req, res, next, id) => {
+    try {
+      let comments = await Comments.findById(id)
+      if (!comments)
+        return res.status('400').json({
+          error: "User not found"
+        })
+      req.profile = comments
+      next()
+    } catch (err) {
+      return res.status('400').json({
+        error: "Could not retrieve user"
+      })
+    }
+  }
 
 const update = async (req, res) => {
   try {
@@ -80,6 +95,7 @@ export default {
   create,
   list,
   read,
+  commentsByID_User,
   commentsByID,
   update,
   remove

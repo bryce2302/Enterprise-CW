@@ -8,5 +8,18 @@ router.route('/api/comments')
   .get(authCtrl.requireSignin, commentCtrl.list)
   .post(authCtrl.requireSignin, commentCtrl.create)
 
+  
+router.route('/api/comments/:commentID')
+  .get(authCtrl.requireSignin, commentCtrl.list)
+
+router.param('commentID', commentCtrl.commentsByID)
+
+
+router.route('/api/comments/:commentsByID_User')
+  .get(authCtrl.requireSignin, commentCtrl.list)
+
+router.param('commentsByID_User', commentCtrl.commentsByID_User)
+
+
 
 export default router
