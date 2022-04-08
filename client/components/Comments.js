@@ -7,7 +7,7 @@ export default class Comments extends Comments {
     }
 
     componentDidMount(){
-        let scriptEl = document.createElement("script")
+        let scriptEl = document.createElement("script");
         scriptEl.setAttribute("src", "https://utteranc.es/client.js")
         scriptEl.setAttribute("crossorigin", "annonymous")
         scriptEl.setAttribute("async", true)
