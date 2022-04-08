@@ -14,7 +14,7 @@ import Person from '@material-ui/icons/Person'
 import { Link } from 'react-router-dom'
 import { listadmin } from './api-user.js'
 import auth from './../auth/auth-helper'
-import AdminDeleteUser from './DeleteUser.js'
+import DeleteUser from './DeleteUser.js'
 import { read } from './api-user.js'
 
 
@@ -71,7 +71,7 @@ export default function Users({ match }) {
               <ListItemText primary={item.name} />
               <ListItemText primary={"About: " + item.about} />
               <ListItemText primary={"Administrator: " + item.admin} />
-              <AdminDeleteUser userId={item._id} />
+              <DeleteUser userId={item._id} />
               <ListItemSecondaryAction>
                 <IconButton>
                   <ArrowForward />
