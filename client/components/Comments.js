@@ -1,28 +1,27 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 
-export default class Comments extends Comments {
-    constructor(props){
+export default class Comments extends Component {
+    constructor(props) {
         super(props);
         this.commentBox = React.createRef();
     }
 
-    componentDidMount(){
+    componentDidMount() {
         let scriptEl = document.createElement("script");
         scriptEl.setAttribute("src", "https://utteranc.es/client.js")
-        scriptEl.setAttribute("crossorigin", "annonymous")
+        scriptEl.setAttribute("crossorigin", "anonymous")
         scriptEl.setAttribute("async", true)
-        scriptEl.setAttribute("repo","bryce2302/Enterprise-CW")
-        scriptEl.setAttribute("issue-term","url")
-        scriptEl.setAttribute("theme","github-light")
+        scriptEl.setAttribute("repo", "bryce2302/Enterprise-CW")
+        scriptEl.setAttribute("issue-term", "title")
+        scriptEl.setAttribute("theme", "github-light")
         this.commentBox.current.appendChild(scriptEl)
     }
 
-    render(){
-        return(
-            <div style = {{width: '100%'}} id="comments">
-                <div ref = {this.commentBox}></div>
+    render() {
+        return (
+            <div style={{ width: '100%' }} id="comments">
+                <div ref={this.commentBox}></div>
             </div>
         )
     }
-
 }
