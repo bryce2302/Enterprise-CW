@@ -14,7 +14,7 @@ import Person from '@material-ui/icons/Person'
 import { Link } from 'react-router-dom'
 import { listadmin } from './api-user.js'
 import auth from './../auth/auth-helper'
-import AdminDeleteUser from '/Delete.js'
+import AdminDeleteUser from './DeleteUser.js'
 import { read } from './api-user.js'
 
 
