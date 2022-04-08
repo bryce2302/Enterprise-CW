@@ -31,7 +31,7 @@ const list = async (req, res) => {
 }
 
 
-const commentsByID_User = async (req, res) => {
+const commentsByIDUser = async (req, res) => {
   try {
     let comment = await Comments.find({userID : user._id}).select('_id name userID comments likes ')
     if (!comment)
@@ -95,7 +95,7 @@ export default {
   create,
   list,
   read,
-  commentsByID_User,
+  commentsByIDUser,
   commentsByID,
   update,
   remove

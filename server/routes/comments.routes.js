@@ -15,10 +15,10 @@ router.route('/api/commentsID/:commentsID')
 router.param('commentsID', commentCtrl.commentsByID)
 
 
-router.route('/api/commentsByID_User/:commentsByID_User')
+router.route('/api/commentsByIDUser/:commentsByIDUser')
   .get(authCtrl.requireSignin, commentCtrl.list)
 
-router.param('commentsByID_User', commentCtrl.commentsByID_User)
+router.param('commentsByIDUser', commentCtrl.commentsByIDUser)
 
 
 
