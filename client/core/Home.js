@@ -82,17 +82,24 @@ export default function Home(){
               Here we believe that all animals deserve attention and not just the cute ones. How can you not think that a naked mole rat is cuter than a kitten ??
               Please explore the site and sign up/Log in to experience the full use of the site. :)
               <hr></hr>
+              
               <div>  <Comments /> </div>
+
+
               <div>
               {jokes.joke}
               </div>
             </Typography>
+
+            <div>
+              <Comments> </Comments>
+            </div>
           </CardContent>
         
         </Card>
 
-      
-    
-
     )
+
+
+
 }
