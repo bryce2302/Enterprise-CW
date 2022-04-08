@@ -8,14 +8,14 @@ router.route('/api/comments')
   .get(authCtrl.requireSignin, commentCtrl.list)
   .post(authCtrl.requireSignin, commentCtrl.create)
 
-  
-router.route('/api/comments/:commentID')
+
+router.route('/api/comments/commentID/:commentID')
   .get(authCtrl.requireSignin, commentCtrl.list)
 
 router.param('commentID', commentCtrl.commentsByID)
 
 
-router.route('/api/comments/:commentsByID_User')
+router.route('/api/comments/commentsByID_User/:commentsByID_User')
   .get(authCtrl.requireSignin, commentCtrl.list)
 
 router.param('commentsByID_User', commentCtrl.commentsByID_User)
