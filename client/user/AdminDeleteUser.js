@@ -23,11 +23,7 @@ export default function AdminDeleteUser(props) {
   const deleteAccount = () => { 
     remove({
       userId: props.userId
-    }, {t: jwt.token}).then((data) => {
-      auth.clearJWT(() => console.log('deleted'))
-        setRedirect(true)
-      }
-    )
+    })
   }
   const handleRequestClose = () => {
     setOpen(false)
