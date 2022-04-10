@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
@@ -6,7 +6,8 @@ import Typography from '@material-ui/core/Typography'
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
-import {list} from './api-comments.js'
+import { list } from './api-comments.js'
+import { CardContent } from '@material-ui/core'
 
 
 const useStyles = makeStyles(theme => ({
@@ -30,7 +31,7 @@ export default function Comments() {
     const abortController = new AbortController()
     const signal = abortController.signal
 
-    list({t: jwt.token},signal).then((data) => {
+    list({ t: jwt.token }, signal).then((data) => {
       if (data && data.error) {
         console.log(data.error)
       } else {
@@ -38,7 +39,7 @@ export default function Comments() {
       }
     })
 
-    return function cleanup(){
+    return function cleanup() {
       abortController.abort()
     }
   }, [])
@@ -47,21 +48,23 @@ export default function Comments() {
 
 
 
-    return (
-      <Paper className={classes.root} elevation={4}>
-        <Typography variant="h6" className={classes.title}>
-         Comments Page
-        </Typography>
-        <List dense>
-        {comments.map((item, i) => {
-          return (
-                      <ListItemText primary={item.comments}/>
+  return (
+    <Paper className={classes.root} elevation={4}>
+      <Typography variant="h6" className={classes.title}>
+        Comments Page
+      </Typography>
 
-                      
-                 )
-               })
-            }
-        </List>
-      </Paper>
-    )
+      <Card>
+        <CardContent>
+          <Typography variant="h6" className={classes.title}>
+            {item.comments}
+          </Typography>
+
+        </CardContent>
+      </Card>
+      <List dense>
+
+      </List>
+    </Paper>
+  )
 }
