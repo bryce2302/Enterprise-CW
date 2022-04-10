@@ -51,7 +51,7 @@ export default function Comments() {
 
 
   function deleteComment (comments){
-    remove(comments, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id.then((data) =>{
+    remove(comments, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
@@ -59,7 +59,6 @@ export default function Comments() {
       }
       location.reload()
     })
-    )
   }
 
 
