@@ -16,7 +16,7 @@ const create = async (comments) => {
 
   const read = async (params, credentials, signal) => {
     try {
-      let response = await fetch('/api/comments/' + params.userId, {
+      let response = await fetch('/api/comments/' + params.commentsId, {
         method: 'GET',
         signal: signal,
         headers: {
@@ -31,11 +31,16 @@ const create = async (comments) => {
     }
   }
   
-  const list = async (signal) => {
+  const list = async (credentials,signal) => {
     try {
       let response = await fetch('/api/comments/', {
         method: 'GET',
         signal: signal,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + credentials.t
+        }
       })
       return await response.json()
     } catch(err) {

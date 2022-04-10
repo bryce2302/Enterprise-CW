@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography'
 
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
-
+import auth from './../auth/auth-helper'
 import {list} from './api-comments.js'
 
 
@@ -23,12 +23,14 @@ const useStyles = makeStyles(theme => ({
 export default function Comments() {
   const classes = useStyles()
   const [comments, setComments] = useState([])
+  const jwt = auth.isAuthenticated()
+
 
   useEffect(() => {
     const abortController = new AbortController()
     const signal = abortController.signal
 
-    list(signal).then((data) => {
+    list({t: jwt.token},signal).then((data) => {
       if (data && data.error) {
         console.log(data.error)
       } else {
