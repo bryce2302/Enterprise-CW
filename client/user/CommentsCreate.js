@@ -67,7 +67,6 @@ export default function CommentsCreate() {
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
-
       }
     })
     

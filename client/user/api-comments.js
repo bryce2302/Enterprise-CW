@@ -1,15 +1,17 @@
-const create = async (comments,signal,credentials) => {
+
+
+  const create = async (params, credentials, signal) => {
     try {
-        let response = await fetch('/api/comments/', {
-          method: 'POST',
-          signal: signal,
-          headers: {
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + credentials.t
-          },
-          body: JSON.stringify(comments)
-        })
+      let response = await fetch('/api/comments/' + params.commentsId, {
+        method: 'POST',
+        signal: signal,
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + credentials.t
+        },
+        body: JSON.stringify(comments)
+      })
       return await response.json()
     } catch(err) {
       console.log(err)
