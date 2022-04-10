@@ -58,8 +58,9 @@ export default function CommentsCreate() {
 
   const clickSubmit = () => {
     const comments = {
-      comments: values.comments || undefined
-      
+      comments: values.comments || undefined,
+      name: auth.isAuthenticated().user.name,
+      userID: auth.isAuthenticated().user._id 
     }
     create({t: jwt.token},comments).then((data) => {
       if (data.error) {
