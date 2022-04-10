@@ -2,6 +2,13 @@ import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
+
+import List from '@material-ui/core/List'
+import ListItem from '@material-ui/core/ListItem'
+import ListItemAvatar from '@material-ui/core/ListItemAvatar'
+import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction'
+import ListItemText from '@material-ui/core/ListItemText'
+
 import {list} from './api-comments.js'
 
 
@@ -46,7 +53,7 @@ export default function Comments() {
         <Typography variant="h6" className={classes.title}>
          Comments Page
         </Typography>
-
+        <List dense>
         {comments.map((item, i) => {
           return <Link to={"/comments/" + item._id} key={i}>
                     <ListItem button>
@@ -60,6 +67,7 @@ export default function Comments() {
                  </Link>
                })
             }
+        </List>
       </Paper>
     )
 }
