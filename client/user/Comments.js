@@ -47,7 +47,7 @@ export default function Comments() {
 
 
 
-
+comments.map ((item, i) => {
 
   return (
     <Paper className={classes.root} elevation={4}>
@@ -68,4 +68,4 @@ export default function Comments() {
       </List>
     </Paper>
   )
-}
+})}
