@@ -47,5 +47,6 @@ const create = async (comments) => {
   export {
     create,
     list,
+    read
   }
   
