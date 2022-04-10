@@ -70,7 +70,7 @@ export default function CommentsCreate() {
 
       }
     })
-    location.reload();
+    
   }
 
     return (<div>
@@ -79,8 +79,6 @@ export default function CommentsCreate() {
           <Typography variant="h6" className={classes.title}>
             New Comment
           </Typography>
-          <TextField id="userID" label="userID" className={classes.textField} value={values.userID} onChange={handleChange('userID')} margin="normal"/><br/>
-          <TextField id="name" type="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
           <TextField id="comments" type="comments" label="Comment:" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/>
           <br/> {
             values.error && (<Typography component="p" color="error">
