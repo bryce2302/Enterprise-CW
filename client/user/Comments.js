@@ -56,14 +56,12 @@ export default function Comments() {
         <List dense>
         {comments.map((item, i) => {
           return <Link to={"/comments/" + item._id} key={i}>
-                    <ListItem button>
                       <ListItemText primary={item.comments}/>
                       <ListItemSecondaryAction>
                       <IconButton>
                           <ArrowForward/>
                       </IconButton>
                       </ListItemSecondaryAction>
-                    </ListItem>
                  </Link>
                })
             }
