@@ -62,6 +62,7 @@ export default function Comments() {
           return (
             <Card margin="normal" paddding="10px">
                       <ListItemText primary={item.comments}/>
+                      <Button size = "small">Edit</Button>
                   </Card>
                       
                  )
