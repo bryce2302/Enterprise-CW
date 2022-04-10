@@ -62,9 +62,13 @@ export default function Comments() {
           return (
             <Card margin="10px" paddding="10px">
                       <ListItemText primary={item.comments}/>
-                      <Button class="mdc-button mdc-button--raised" color="blue">Reply</Button>
+                      <Button size = "small" >Reply</Button>
                       {auth.isAuthenticated().user._id == item.userID && 
-                      <Button class="mdc-button mdc-button--raised" color="blue">Edit</Button>
+                      <Button size = "small">Edit
+                      <Button size = "small">Delete
+                      </Button>
+                      </Button>
+                      
                       }
                   </Card>
                       
