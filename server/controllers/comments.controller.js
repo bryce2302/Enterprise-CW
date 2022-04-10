@@ -52,7 +52,7 @@ const commentsByUser = async (req, res) => {
         return res.status('400').json({
           error: "no comments found with this ID"
         })
-      req.profile = comment
+      req.commentByID = comment
       next()
     } catch (err) {
       return res.status('400').json({
