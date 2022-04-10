@@ -55,13 +55,8 @@ export default function Comments() {
         </Typography>
         <List dense>
         {comments.map((item, i) => {
-          return <Link to={"/comments/" + item._id} key={i}>
+          return <Link to={"/comments/"}>
                       <ListItemText primary={item.comments}/>
-                      <ListItemSecondaryAction>
-                      <IconButton>
-                          <ArrowForward/>
-                      </IconButton>
-                      </ListItemSecondaryAction>
                  </Link>
                })
             }
