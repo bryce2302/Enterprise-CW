@@ -44,6 +44,7 @@ const useStyles = makeStyles(theme => ({
 export default function CommentsCreate() {
   const classes = useStyles()
   const jwt = auth.isAuthenticated()
+
   const [values, setValues] = useState({
     userID: '',
     name: '',
@@ -63,7 +64,7 @@ export default function CommentsCreate() {
       comments: values.comments || undefined
       
     }
-    create({t: jwt.token},comments).then((data) => {
+    create({t: jwt.token},credentials,comments).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
