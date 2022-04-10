@@ -63,7 +63,7 @@ const commentsByUser = async (req, res) => {
 
 const update = async (req, res) => {
   try {
-    let comments = req.profile
+    let comments = req.commentByID
     comments = extend(comments, req.body)
     await comments.save()
     res.json(comments)
@@ -76,7 +76,7 @@ const update = async (req, res) => {
 
 const deleteComment = async (req, res) => {
   try {
-    let comments = req.profile
+    let comments = req.commentByID
     let deletedComments = await comments.deleteComment()
     res.json(deletedComments)
   } catch (err) {
@@ -87,7 +87,7 @@ const deleteComment = async (req, res) => {
 }
 
 const read = (req, res) => {
-  return res.json(req.profile)
+  return res.json(req.commentByID)
 }
 
 
