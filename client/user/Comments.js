@@ -64,10 +64,10 @@ export default function Comments() {
                       <ListItemText primary={item.comments}/>
                       <Button size = "small" >Reply</Button>
                       {auth.isAuthenticated().user._id == item.userID && 
-                      <Button size = "small">Edit
-                      <Button size = "small">Delete
+                      <Button size = "small">Edit 
+                      <Button size = "small">Delete </Button>
                       </Button>
-                      </Button>
+                      
                       
                       }
                   </Card>

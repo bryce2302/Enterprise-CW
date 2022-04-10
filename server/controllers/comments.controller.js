@@ -74,10 +74,10 @@ const update = async (req, res) => {
   }
 }
 
-const remove = async (req, res) => {
+const deleteComment = async (req, res) => {
   try {
     let comments = req.profile
-    let deletedComments = await comments.remove()
+    let deletedComments = await comments.deleteComment()
     res.json(deletedComments)
   } catch (err) {
     return res.status(400).json({
@@ -98,5 +98,5 @@ export default {
   commentsByUser,
   commentsID,
   update,
-  remove
+  deleteComment
 }
