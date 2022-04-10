@@ -77,13 +77,12 @@ export default function Comments() {
             <Card margin="10px" paddding="10px">
                       <ListItemText primary={item.comments}/>
                       <Button size = "small" >Reply</Button>
+
                       {auth.isAuthenticated().user._id == item.userID && 
-                      <Button size = "small">Edit 
-                      <Button size = "small" onClick={() => deleteComment(item._id)}>Delete </Button>
-                      </Button>
-                      
-                      
-                      }
+                      <><Button size="small">Edit </Button><Button size="medium" onClick={() => deleteComment(item._id)}>Delete</Button></>
+            
+                       }
+
                   </Card>
                       
                  )
