@@ -12,6 +12,7 @@ import UserAdmin from './user/UsersAdmin'
 import Game from './game/Game'
 import Events from './events/Events'
 import Comments from './user/Comments'
+import CommentsCreate from './user/commentsCreate'
 
 
 const MainRouter = () => {
@@ -24,6 +25,7 @@ const MainRouter = () => {
         <Route path="/signin" component={Signin}/>
         <Route path="/game" component={Game}/>
         <Route path="/events" component={Events}/>
+        <Route path="/commentsCreate" component={CommentsCreate}/>
         <PrivateRoute path="/user/edit/:userId" component={EditProfile}/>
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
