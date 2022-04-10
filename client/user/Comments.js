@@ -60,7 +60,7 @@ export default function Comments() {
           <List dense>
         {comments.map((item, i) => {
           return (
-            <Card>
+            <Card margin="normal" paddding="10px">
                       <ListItemText primary={item.comments}/>
                   </Card>
                       
