@@ -8,7 +8,7 @@ import Typography from '@material-ui/core/Typography'
 import myImg from './../assets/images/myimage.png'
 import {Link} from 'react-router-dom'
 import {joke} from '../thirdparty/api-dadjokes.js'
-import Comments from '../components/Comments'
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -83,7 +83,7 @@ export default function Home(){
               Please explore the site and sign up/Log in to experience the full use of the site. :)
               <hr></hr>
               
-              <div>  <Comments /> </div>
+         
 
 
               <div>
