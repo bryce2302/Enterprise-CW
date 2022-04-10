@@ -11,7 +11,7 @@ import EditProfile from './user/EditProfile'
 import UserAdmin from './user/UsersAdmin'
 import Game from './game/Game'
 import Events from './events/Events'
-import Comments from './comments/Comments'
+import Comments from './user/Comments'
 
 
 const MainRouter = () => {

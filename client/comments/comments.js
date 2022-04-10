@@ -18,6 +18,16 @@ const useStyles = makeStyles(theme => ({
 export default function Comments() {
   const classes = useStyles()
 
+  useEffect(() => {
+    const abortController = new AbortController()
+    const signal = abortController.signal
+
+    return function cleanup(){
+      abortController.abort()
+    }
+  }, [])
+
+
 
 
     return (
