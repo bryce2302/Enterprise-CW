@@ -1,8 +1,7 @@
 
-
-  const create = async (params, credentials, signal) => {
+const create = async (credentials, signal) => {
     try {
-      let response = await fetch('/api/comments/' + params.commentsId, {
+      let response = await fetch('/api/comments/', {
         method: 'POST',
         signal: signal,
         headers: {
