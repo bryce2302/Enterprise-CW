@@ -62,7 +62,7 @@ export default function Comments() {
           return (
             <Card margin="10px" paddding="10px">
                       <ListItemText primary={item.comments}/>
-                      <Button size = "small">Edit</Button>
+                      <Button class="mdc-button mdc-button--raised">Edit</Button>
                   </Card>
                       
                  )
