@@ -78,6 +78,7 @@ const deleteComment = async (req, res) => {
   try {
     let comments = req.commentByID
     let deletedComments = await comments.deleteComment()
+    
     res.json(deletedComments)
   } catch (err) {
     return res.status(400).json({
