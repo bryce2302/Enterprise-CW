@@ -12,7 +12,7 @@ import UserAdmin from './user/UsersAdmin'
 import Game from './game/Game'
 import Events from './events/Events'
 import Comments from './user/Comments'
-import CommentsCreate from './user/commentsCreate'
+import CommentsCreate from './user/CommentsCreate'
 
 
 const MainRouter = () => {
