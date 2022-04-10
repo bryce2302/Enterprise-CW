@@ -10,7 +10,7 @@ import {list} from './api-comments.js'
 import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
-import remove from './api-comments/remove'
+import {remove} from './api-comments.js'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
