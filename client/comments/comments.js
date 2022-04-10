@@ -27,7 +27,6 @@ const useStyles = makeStyles(theme => ({
 
 export default function Comments() {
   const classes = useStyles()
-  const [users, setUsers] = useState([])
 
 
     return (
