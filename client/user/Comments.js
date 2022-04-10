@@ -55,9 +55,9 @@ export default function Comments() {
         </Typography>
         <List dense>
         {comments.map((item, i) => {
-          return <Link to={"/comments/"}>
+          return (
                       <ListItemText primary={item.comments}/>
-                 </Link>
+                 )
                })
             }
         </List>
