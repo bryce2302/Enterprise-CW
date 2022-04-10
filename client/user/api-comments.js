@@ -1,9 +1,8 @@
 
-const create = async (credentials, signal) => {
+const create = async (credentials,comments) => {
     try {
       let response = await fetch('/api/comments/', {
         method: 'POST',
-        signal: signal,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json',
