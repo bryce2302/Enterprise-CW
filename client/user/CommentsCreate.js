@@ -65,7 +65,7 @@ export default function CommentsCreate() {
       comments: values.comments || undefined
       
     }
-    create({t: jwt.token},credentials,comments).then((data) => {
+    create({t: jwt.token},comments).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
