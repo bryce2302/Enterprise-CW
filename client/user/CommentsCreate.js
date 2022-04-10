@@ -47,21 +47,17 @@ export default function CommentsCreate() {
   const jwt = auth.isAuthenticated()
 
   const [values, setValues] = useState({
-    userID: '',
-    name: '',
     comments: '',
     open: false,
     error: ''
   })
 
-  const handleChange = userID => event => {
-    setValues({ ...values, [userID]: event.target.value })
+  const handleChange = comments => event => {
+    setValues({ ...values, [comments]: event.target.value })
   }
 
   const clickSubmit = () => {
     const comments = {
-      userID: values.userID || undefined,
-      name: values.name || undefined,
       comments: values.comments || undefined
       
     }
