@@ -8,6 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
 import {list} from './api-comments.js'
 import { CardContent } from '@material-ui/core'
+import Card from '@material-ui/core/Card'
 
 
 const useStyles = makeStyles(theme => ({
