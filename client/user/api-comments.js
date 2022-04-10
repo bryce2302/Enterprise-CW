@@ -1,4 +1,4 @@
-const create = async (user) => {
+const create = async (comments) => {
     try {
         let response = await fetch('/api/comments/', {
           method: 'POST',
@@ -6,7 +6,7 @@ const create = async (user) => {
             'Accept': 'application/json',
             'Content-Type': 'application/json'
           },
-          body: JSON.stringify(user)
+          body: JSON.stringify(comments)
         })
       return await response.json()
     } catch(err) {
