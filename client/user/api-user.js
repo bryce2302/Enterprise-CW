@@ -2,7 +2,6 @@ const create = async (user) => {
   try {
       let response = await fetch('/api/users/', {
         method: 'POST',
-        signal: signal,
         headers: {
           'Accept': 'application/json',
           'Content-Type': 'application/json'
