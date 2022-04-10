@@ -75,13 +75,15 @@ export default function Comments() {
           return (
             <Card margin="10px" paddding="10px">
                       <ListItemText primary={item.comments}/>
-                      <Button size = "small" >Reply</Button>
+                      
+                      <Button size = "small">Reply</Button>
 
                       {auth.isAuthenticated().user._id == item.userID && 
-                      <><Button size="small">Edit </Button><Button size="medium" onClick={() => deleteComment(item._id)}>Delete</Button></>
-            
+                      <>
+                      <Button size="small">Edit</Button> 
+                      <Button size="medium" onClick={() => deleteComment(item._id)}>Delete</Button>
+                      </>
                        }
-
                   </Card>
                       
                  )
@@ -89,8 +91,6 @@ export default function Comments() {
             }
         </List>
             </CardContent>
-      
-       
       </Paper>
     )
 }
