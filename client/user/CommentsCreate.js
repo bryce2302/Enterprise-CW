@@ -76,9 +76,9 @@ export default function CommentsCreate() {
           <Typography variant="h6" className={classes.title}>
             New Comment
           </Typography>
-          <TextField id="userID" label="userID" className={classes.textField} value={values.name} onChange={handleChange('userID')} margin="normal"/><br/>
-          <TextField id="name" type="name" label="Name" className={classes.textField} value={values.email} onChange={handleChange('name')} margin="normal"/><br/>
-          <TextField id="comments" type="comments" label="Comment:" className={classes.textField} value={values.password} onChange={handleChange('comments')} margin="normal"/>
+          <TextField id="userID" label="userID" className={classes.textField} value={values.userID} onChange={handleChange('userID')} margin="normal"/><br/>
+          <TextField id="name" type="name" label="Name" className={classes.textField} value={values.name} onChange={handleChange('name')} margin="normal"/><br/>
+          <TextField id="comments" type="comments" label="Comment:" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/>
           <br/> {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
