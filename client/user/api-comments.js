@@ -49,11 +49,28 @@ const create = async (credentials,comments) => {
       console.log(err)
     }
   }
+
+  const remove = async (params, credentials) => {
+    try {
+      let response = await fetch('/api/comments/' + params.commentsId, {
+        method: 'DELETE',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + credentials.t
+        }
+      })
+      return await response.json()
+    } catch(err) {
+      console.log(err)
+    }
+  }
   
  
   export {
     create,
     list,
-    read
+    read,
+    remove
   }
   

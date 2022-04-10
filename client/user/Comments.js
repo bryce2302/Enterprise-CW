@@ -10,6 +10,7 @@ import {list} from './api-comments.js'
 import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
+import remove from './api-comments/remove'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -22,11 +23,14 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+
+
+
 export default function Comments() {
   const classes = useStyles()
   const [comments, setComments] = useState([])
   const jwt = auth.isAuthenticated()
-
+    
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -45,8 +49,18 @@ export default function Comments() {
     }
   }, [])
 
- 
 
+  function deleteComment (comments){
+    remove(comments, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id.then((data) =>{
+      if (data.error) {
+        setValues({ ...values, error: data.error})
+      } else {
+        setValues({ ...values, error: '', open: true})
+      }
+      location.reload()
+    })
+    )
+  }
 
 
     return (
@@ -65,7 +79,7 @@ export default function Comments() {
                       <Button size = "small" >Reply</Button>
                       {auth.isAuthenticated().user._id == item.userID && 
                       <Button size = "small">Edit 
-                      <Button size = "small">Delete </Button>
+                      <Button size = "small" onClick={() => deleteComment(item._id)}>Delete </Button>
                       </Button>
                       
                       
