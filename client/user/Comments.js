@@ -55,7 +55,7 @@ export default function Comments() {
          Comments Page
         </Typography>
 
-        <Card>
+       
           <CardContent>
           <List dense>
         {comments.map((item, i) => {
@@ -69,7 +69,7 @@ export default function Comments() {
             }
         </List>
             </CardContent>
-        </Card>
+      
        
       </Paper>
     )
