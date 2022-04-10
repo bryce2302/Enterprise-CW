@@ -74,11 +74,11 @@ const update = async (req, res) => {
   }
 }
 
-const deleteComment = async (req, res) => {
+const remove = async (req, res) => {
   try {
     let comments = req.commentByID
-    let deletedComments = await comments.deleteComment()
-    
+    let deletedComments = await comments.remove()
+
     res.json(deletedComments)
   } catch (err) {
     return res.status(400).json({
@@ -99,5 +99,5 @@ export default {
   commentsByUser,
   commentsID,
   update,
-  deleteComment
+  remove
 }
