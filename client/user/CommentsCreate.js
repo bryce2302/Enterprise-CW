@@ -60,14 +60,17 @@ export default function CommentsCreate() {
       userID: values.userID || undefined,
       name: values.name || undefined,
       comments: values.comments || undefined
+      
     }
     create(comments).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
         setValues({ ...values, error: '', open: true})
+
       }
     })
+    location.reload();
   }
 
     return (<div>

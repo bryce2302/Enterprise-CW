@@ -1,10 +1,12 @@
-const create = async (user) => {
+const create = async (user,credentials,signal) => {
   try {
       let response = await fetch('/api/users/', {
         method: 'POST',
+        signal: signal,
         headers: {
           'Accept': 'application/json',
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + credentials.t
         },
         body: JSON.stringify(user)
       })
