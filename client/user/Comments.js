@@ -68,29 +68,27 @@ export default function Comments() {
          Comments Page
         </Typography>
 
-       
-          <CardContent>
+        <CardContent>
           <List dense>
-        {comments.map((item, i) => {
-          return (
-            <Card margin="10px" paddding="10px">
-                      <ListItemText primary={item.comments}/>
-                      
-                      <Button size = "small">Reply</Button>
+            {comments.map((item, i) => {
+                    return (
+                      <Card margin="10px" paddding="10px">
+                                <ListItemText primary={item.comments}/>
+                                
+                                <Button size = "small">Reply</Button>
 
-                      {auth.isAuthenticated().user._id == item.userID && 
-                      <>
-                      <Button size="small">Edit</Button> 
-                      <Button size="medium" onClick={() => deleteComment(item._id)}>Delete</Button>
-                      </>
-                       }
-                  </Card>
-                      
-                 )
-               })
+                                {auth.isAuthenticated().user._id == item.userID && 
+                                <>
+                                <Button size="medium">Edit</Button> 
+                                <Button size="medium" onClick={() => deleteComment(item._id)}>Delete</Button>
+                                </>
+                                  }
+                      </Card>
+                    )
+                  })
             }
-        </List>
-            </CardContent>
+          </List>
+        </CardContent>
       </Paper>
     )
 }
