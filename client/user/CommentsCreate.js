@@ -59,8 +59,8 @@ export default function CommentsCreate() {
   const clickSubmit = () => {
     const comments = {
       comments: values.comments || undefined,
-      name: auth.isAuthenticated().user.name,
-      userID: auth.isAuthenticated().user._id 
+      name: auth.isAuthenticated().user.name, //gets the user name
+      userID: auth.isAuthenticated().user._id  //gets the users ID
     }
     create({t: jwt.token},comments).then((data) => {
       if (data.error) {
@@ -69,7 +69,7 @@ export default function CommentsCreate() {
         setValues({ ...values, error: '', open: true})
       }
     })
-    
+    location.reload();
   }
 
     return (<div>
