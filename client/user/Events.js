@@ -112,9 +112,9 @@ export default function Events({ match }) {
                   return (
                     <Card className = {classes.eventStyle}>
                       
-                              <ListItemText primary={item.eventName}/>
-                              <ListItemText primary={item.eventDesc}/>
-                              <ListItemText primary={item.numAttending}/>
+                              Event Title: <ListItemText primary={item.eventName}/>
+                              Event Description: <ListItemText primary={item.eventDesc}/>
+                              Number of People Attending: <ListItemText primary={item.numAttending}/>
                         
                               <Button variant="contained" color="primary" size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
 
