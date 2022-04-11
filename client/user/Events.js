@@ -48,10 +48,10 @@ export default function Events() {
 
   const clickAttending = () => {
     const event = {
-      numAttending: match.params.eventId
+      numAttending: values.numAttending || undefined
     }
     update({
-      userId: match.params.eventId
+      eventId: match.params.eventId
     }, {
       t: jwt.token
     }, event).then((data) => {
