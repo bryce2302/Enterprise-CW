@@ -78,7 +78,6 @@ const remove = async (req, res) => {
   try {
     let comments = req.commentByID
     let deletedComments = await comments.remove()
-
     res.json(deletedComments)
   } catch (err) {
     return res.status(400).json({

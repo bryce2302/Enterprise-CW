@@ -22,7 +22,7 @@ router.route('/api/commentsByUser/:commentsByUser')
   .get(authCtrl.requireSignin, commentCtrl.read)
 
 router.param('commentsByUser', commentCtrl.commentsByUser)
-router.param('userId', userCtrl.userByID)
+
 
  
 
