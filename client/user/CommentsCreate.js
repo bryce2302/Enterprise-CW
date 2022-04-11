@@ -75,7 +75,7 @@ export default function CommentsCreate() {
 
     return (<div>
 
-{values.queryComplete && <div>
+{/* {values.queryComplete && <div> */}
   
 
       <Card className={classes.card}>
@@ -107,7 +107,7 @@ export default function CommentsCreate() {
         </DialogActions>
       </Dialog>
       </div>}
-    </div>
+    // </div>
     )
   
 }
