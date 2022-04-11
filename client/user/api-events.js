@@ -33,7 +33,7 @@ const create = async (credentials,events) => {
     }
   }
 
-  const update = async (params,credentials, events) => {
+  const update = async (params,credentials, event) => {
     try {
       let response = await fetch('/api/events/' + params.eventId, {
         method: 'PUT',
