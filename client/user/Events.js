@@ -73,8 +73,9 @@ export default function Events() {
                               
                               <FormControlLabel
                               control={<Checkbox checked={checked} onChange={handleChange} />}
-                              label="Check me"
+                              label="Do you wish to attend this event?"
                               />
+                              <Button size = "small">Submit</Button>
 
                     </Card>
                   )
