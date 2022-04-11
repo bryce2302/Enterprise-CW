@@ -69,7 +69,7 @@ export default function CommentsCreate() {
         setValues({ ...values, error: '', open: true})
       }
     })
-    location.reload();
+    //location.reload();
   }
 
     return (<div>
