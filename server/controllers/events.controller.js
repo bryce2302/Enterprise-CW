@@ -68,7 +68,7 @@ const eventId = async (req, res, next, id) => {
     next()
   } catch (err) {
     return res.status('400').json({
-      error: "Could not retrieve comment"
+      error: "Could not retrieve evtn"
     })
   }
 }
