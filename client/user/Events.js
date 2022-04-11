@@ -31,8 +31,12 @@ const useStyles = makeStyles(theme => ({
 export default function Events() {
   const classes = useStyles()
   const [events, setEvents] = useState([])
+  const [checked, setChecked] = React.useState(true);
   const jwt = auth.isAuthenticated()
     
+  const handleChange = (event) => {
+    setChecked(event.target.checked);
+  };
 
   useEffect(() => {
     const abortController = new AbortController()
