@@ -62,7 +62,7 @@ export default function Events() {
           {events.map((item, i) => {
                   return (
                     <Card margin="10px" paddding="10px">
-                              <ListItemText primary={item.events}/>
+                              <ListItemText primary={item.eventName}/>
                               
                               <Button size = "small">Reply</Button>
 
