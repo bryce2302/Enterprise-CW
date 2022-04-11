@@ -81,7 +81,7 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
                                 <ListItemText primary={item.comments}/>
                                 
-                                <Button size = "small">Reply</Button>
+                                <Button color='#b0b0b0' size = "small">Reply</Button>
                                 
 
                                 {auth.isAuthenticated().user._id == item.userID && 
