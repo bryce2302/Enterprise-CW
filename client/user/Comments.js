@@ -79,9 +79,8 @@ export default function Comments() {
             {comments.map((item, i) => {
                     return (
                       <Card className = {classes.commentsStyle}>
+                        
                                 <ListItemText primary={item.comments}/>
-                                
-                                
                                 <Button size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
                                 
                                   
