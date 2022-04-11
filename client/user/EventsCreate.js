@@ -61,7 +61,7 @@ export default function EventsCreate() {
   const clickSubmit = () => {
     const eventName = {
       eventName: values.eventName || undefined,
-      eventName: values.eventDesc || undefined,
+      eventDesc: values.eventDesc || undefined,
       
     }
     create({t: jwt.token},eventName).then((data) => {
