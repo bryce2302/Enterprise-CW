@@ -83,7 +83,16 @@ export default function Events({ match }) {
   }, [])
 
  
-
+  function removeEvent (event){
+    remove(event, {t: auth.isAuthenticated().token}, auth.isAuthenticated().event._id).then((data) =>{
+      if (data.error) {
+       // setValues({ ...values, error: data.error})
+      } else {
+       // setValues({ ...values, error: '', open: true})
+      }
+      location.reload()
+    })
+  }
 
   return (
     <Paper className={classes.root} elevation={4}>
@@ -99,7 +108,7 @@ export default function Events({ match }) {
                   return (
                     <Card className = {classes.eventStyle}>
                               <ListItemText primary={item.eventName}/>
-                              
+                              <Button size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                               {/* <FormControlLabel
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
