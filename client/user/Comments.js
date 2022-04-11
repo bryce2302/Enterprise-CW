@@ -23,8 +23,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: `#f6dcf7`,
   },
   commentTitle:{
-    margin: auto,
-    textAlign: 'center'
+    margin: `auto`,
+    textAlign: `center`
   },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
@@ -74,7 +74,10 @@ export default function Comments() {
     return (
       <Paper className={classes.root} elevation={4}>
         <Typography margin="auto" variant="h6" className={classes.title}>
-         Comments Page
+        <Typography className = {classes.commentTitle}>
+        Comments Page
+        </Typography>
+         
         </Typography>
 
         <CardContent>
