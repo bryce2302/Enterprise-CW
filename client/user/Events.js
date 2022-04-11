@@ -111,7 +111,7 @@ export default function Events({ match }) {
     }
     update({
       eventId: match.params.eventId
-    },console.log(eventId)
+    }
     , {
       t: jwt.token
     }, event).then((data) => {
