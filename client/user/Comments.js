@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme => ({
   commentsStyle:{
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
+    border: `2px solid grey`
   },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
@@ -83,7 +84,7 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
 
                                 <ListItemText primary={item.comments}/>
-                                <Button size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
+                                <Button border="grey" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
                                 
                                   
                       </Card>
