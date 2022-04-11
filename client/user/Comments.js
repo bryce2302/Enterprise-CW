@@ -22,7 +22,9 @@ const useStyles = makeStyles(theme => ({
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
   },
-
+  commentTitle:{
+    margin: auto
+  },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
