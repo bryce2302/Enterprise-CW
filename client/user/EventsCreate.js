@@ -55,7 +55,7 @@ export default function EventsCreate() {
 
   const handleChange = eventName => event => {
     setValues({ ...values, [eventName]: event.target.value })
-    setValues({ ...values, [eventDesc]: event.target.value })
+    
   }
 
   const clickSubmit = () => {
