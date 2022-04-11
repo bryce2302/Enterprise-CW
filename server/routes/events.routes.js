@@ -7,7 +7,7 @@ const router = express.Router()
 
 router.route('/api/events')
   .get(authCtrl.requireSignin, eventsCtrl.list)
-  .post(authCtrl.requireSignin, eventsCtrl.create)
+  .post(authCtrl.requireSignin, authCtrl.hasAdminAuthorization, eventsCtrl.create)
 
   
 // router.route('/api/events/:eventId')
@@ -15,7 +15,7 @@ router.route('/api/events')
 
 
 router.route('/api/eventId/:userId/:eventId')
-  .get(authCtrl.requireSignin, authCtrl.hasAuthorization, eventsCtrl.read)
+  .get(authCtrl.requireSignin, authCtrl.hasAdminAuthorization, eventsCtrl.read)
   .delete(authCtrl.requireSignin, authCtrl.hasAdminAuthorization, eventsCtrl.remove)
 
 router.param('eventId', eventsCtrl.eventId)
