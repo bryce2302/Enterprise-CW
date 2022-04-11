@@ -76,12 +76,13 @@ export default function Events() {
                               label="Do you wish to attend this event?"
                               /> */}
                               <Checkbox ></Checkbox>
-                              <Button size = "small">Submit</Button>
+                              
 
                     </Card>
                   )
                 })
           }
+        <Button size = "small">Submit</Button>
         </List>
       </CardContent>
     </Paper>
