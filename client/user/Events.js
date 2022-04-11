@@ -88,10 +88,12 @@ export default function Events() {
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
                               /> */}
-                              <Checkbox checked={values.checked} onChange={handleChange('checked')}
+                              <Checkbox id="checkbox" checked={values.checked} onChange={handleChange('checked')}
                               onClick="this.checked=!this.checked:"
-                              label="Do you wish to attend this event?"
-                               ></Checkbox>
+                              >
+
+                              <label for="checkbox">do you wish to attend? </label>
+                              </Checkbox>
                               
 
                     </Card>
