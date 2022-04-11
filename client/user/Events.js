@@ -19,9 +19,14 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     margin: theme.spacing(5)
   }),
-  commentsStyle:{
+  eventStyle:{
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
+  },
+  eventTitle:{
+    margin: `auto`,
+    textAlign: `center`,
+    variant: `h6`
   },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
@@ -74,7 +79,9 @@ export default function Events() {
   return (
     <Paper className={classes.root} elevation={4}>
       <Typography variant="h6" className={classes.title}>
+      <Typography variant="h6" className={classes.eventTitle}>
        Events Page
+      </Typography>
       </Typography>
 
       <CardContent>

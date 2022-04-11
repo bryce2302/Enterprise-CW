@@ -24,7 +24,8 @@ const useStyles = makeStyles(theme => ({
   },
   commentTitle:{
     margin: `auto`,
-    textAlign: `center`
+    textAlign: `center`,
+    variant: `h6`
   },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
@@ -73,7 +74,7 @@ export default function Comments() {
 
     return (
       <Paper className={classes.root} elevation={4}>
-        <Typography margin="auto" variant="h6" className={classes.title}>
+        <Typography variant="h6" className={classes.title}>
         <Typography className = {classes.commentTitle}>
         Comments Page
         </Typography>
