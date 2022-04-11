@@ -69,8 +69,7 @@ export default function Events() {
 
                               {auth.isAuthenticated().user._id == item.userID && 
                               <>
-                              <Button size="medium">Edit</Button> 
-                              <Button size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
+                              
                               </>
                                 }
                     </Card>
