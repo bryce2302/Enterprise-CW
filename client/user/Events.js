@@ -43,24 +43,9 @@ export default function Events() {
     error: ''
   })
 
-  const handleChange = numAttending => event => {
-    setValues({ ...values, [numAttending]: event.target.value })
+  const handleChange = checked => event => {
+    setValues({ ...values, [checked]: event.target.value })
   }
-
-  const clickSubmit = () => {
-    const numAttending = {
-      numAttending: values.numAttending || undefined
-    }
-    create({t: jwt.token},numAttending).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error})
-      } else {
-        setValues({ ...values, error: '', open: true})
-      }
-    })
-    location.reload();
-  }
-
 
   useEffect(() => {
     const abortController = new AbortController()
