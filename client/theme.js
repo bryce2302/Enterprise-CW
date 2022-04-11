@@ -8,7 +8,7 @@ const theme = createTheme({
     palette: {
       primary: {
       light: '#5c67a3',
-      main: '#42d494',
+      main: '#B2AC88',
       dark: '#2e355b',
       contrastText: '#fff',
     },
@@ -18,7 +18,7 @@ const theme = createTheme({
       dark: '#c60055',
       contrastText: '#000',
     },
-      openTitle: '#42d494',
+      openTitle: '#B2AC88',
       protectedTitle: pink['400'],
       type: 'light'
     }
