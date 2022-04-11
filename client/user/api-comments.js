@@ -56,7 +56,7 @@ const create = async (credentials,comments) => {
       console.log(commentID)
       
 
-      let response = await fetch('/api/comments/' + user + "/" + commentID, {
+      let response = await fetch('/api/commentsID/' + user + "/" + commentID, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
