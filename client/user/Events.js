@@ -23,15 +23,9 @@ const useStyles = makeStyles(theme => ({
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
   },
-  eventTitle:{
-    margin: `auto`,
-    textAlign: `center`,
-    variant: `h6`
-  },
+
   title: {
-    margin: `auto`,
-    textAlign: `center`,
-    variant: `h6`,
+    margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
   }
 }))
@@ -80,10 +74,10 @@ export default function Events() {
 
   return (
     <Paper className={classes.root} elevation={4}>
-      <Typography className={classes.title}>
-      <Typography className={classes.eventTitle}>
+      <Typography variant="h6" className={classes.title}>
+
        Events Page
-      </Typography>
+
       </Typography>
 
       <CardContent>
