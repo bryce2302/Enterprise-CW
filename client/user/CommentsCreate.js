@@ -48,6 +48,7 @@ export default function CommentsCreate() {
 
   const [values, setValues] = useState({
     comments: '',
+    queryComplete: undefined,
     open: false,
     error: ''
   })
@@ -66,7 +67,7 @@ export default function CommentsCreate() {
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
-        setValues({ ...values, error: '', open: true})
+        setValues({ ...values, error: '', open: true, queryComplete: true})
       }
     })
     location.reload();
@@ -74,7 +75,7 @@ export default function CommentsCreate() {
 
     return (<div>
 
-{Comment && <div>
+{values.queryComplete && <div>
   
 
       <Card className={classes.card}>
