@@ -55,7 +55,8 @@ export default function Events({ match }) {
       if (data && data.error) {
         setValues({...values, error: data.error})
       } else {
-        setValues({...values, userId: data._id})
+        /** setValues({...values, userId: data._id}) */
+        
       }
     })
     location.reload();
