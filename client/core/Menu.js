@@ -30,9 +30,6 @@ const Menu = withRouter(({history}) => (
       <Link to="/users">
         <Button style={isActive(history, "/users")}>Users</Button>
       </Link>
-      <Link to="/comments">
-        <Button style={isActive(history, "/comments")}>Comments</Button>
-      </Link>
       {
         !auth.isAuthenticated() && (<span>
           <Link to="/signup">
@@ -50,6 +47,9 @@ const Menu = withRouter(({history}) => (
           <Link to={"/user/" + auth.isAuthenticated().user._id}>
             <Button style={isActive(history, "/user/" + auth.isAuthenticated().user._id)}>My Profile</Button>
           </Link>
+          <Link to="/comments">
+        <Button style={isActive(history, "/comments")}>Comments</Button>
+      </Link>
           <Link to="/commentsCreate">
             <Button style={isActive(history, "/commentsCreate")}>Create A Comment
             </Button>
