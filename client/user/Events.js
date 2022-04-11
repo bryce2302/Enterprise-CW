@@ -110,7 +110,7 @@ export default function Events({ match }) {
       eventDesc: undefined,
     }
     update({
-      userId: match.params.userId
+      eventId: match.params.eventId
     }, {
       t: jwt.token
     }, event).then((data) => {
