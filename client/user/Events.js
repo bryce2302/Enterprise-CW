@@ -19,6 +19,10 @@ const useStyles = makeStyles(theme => ({
     padding: theme.spacing(1),
     margin: theme.spacing(5)
   }),
+  commentsStyle:{
+    margin: `5px 5px 5px 5px`,
+    backgroundColor: `#f6dcf7`,
+  },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
@@ -77,7 +81,7 @@ export default function Events() {
         <List dense>
           {events.map((item, i) => {
                   return (
-                    <Card margin="10px" paddding="10px">
+                    <Card className = {classes.commentsStyle}>
                               <ListItemText primary={item.eventName}/>
                               
                               {/* <FormControlLabel
