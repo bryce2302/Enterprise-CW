@@ -70,7 +70,7 @@ export default function Comments() {
 
     return (
       <Paper className={classes.root} elevation={4}>
-        <Typography variant="h6" className={classes.title}>
+        <Typography margin ='auto' variant="h6" className={classes.title}>
          Comments Page
         </Typography>
 
@@ -79,7 +79,7 @@ export default function Comments() {
             {comments.map((item, i) => {
                     return (
                       <Card className = {classes.commentsStyle}>
-                        
+
                                 <ListItemText primary={item.comments}/>
                                 <Button size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
                                 
