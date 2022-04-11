@@ -12,6 +12,7 @@ import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import {remove} from './api-comments.js'
 
+
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
     padding: theme.spacing(1),
@@ -54,9 +55,9 @@ export default function Comments() {
   function removeComment (comment){
     remove(comment, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
       if (data.error) {
-        setValues({ ...values, error: data.error})
+       //removed set values
       } else {
-        setValues({ ...values, error: '', open: true})
+        //removed set values
       }
       location.reload()
     })
