@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(5)
   }),
   commentsStyle:{
-    margin: '5px 5px 5px 5px'
+    margin: `5px 5px 5px 5px`
   },
 
   title: {
@@ -77,7 +77,7 @@ export default function Comments() {
           <List dense>
             {comments.map((item, i) => {
                     return (
-                      <Card class name = {classes.commentsStyle}>
+                      <Card className = {classes.commentsStyle}>
                                 <ListItemText primary={item.comments}/>
                                 
                                 <Button size = "small">Reply</Button>
