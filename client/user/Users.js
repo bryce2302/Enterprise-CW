@@ -10,7 +10,7 @@ import Avatar from '@material-ui/core/Avatar'
 import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import ArrowForward from '@material-ui/icons/ArrowForward'
-import BadgeIcon from '@mui/icons-material/Badge';
+import Person from '@material-ui/icons/Person'
 import {Link} from 'react-router-dom'
 import {list} from './api-user.js'
 
@@ -58,7 +58,7 @@ export default function Users() {
                     <ListItem button>
                       <ListItemAvatar>
                         <Avatar>
-                          <BadgeIcon/>
+                          <Person/>
                         </Avatar>
                       </ListItemAvatar>
                       <ListItemText primary={item.name}/>
