@@ -120,6 +120,7 @@ export default function Events({ match }) {
         setValues({...values, eventId: data._id})
       }
     })
+    console.log(eventId)
   }
 
   return (
