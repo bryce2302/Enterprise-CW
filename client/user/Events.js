@@ -26,7 +26,12 @@ const useStyles = makeStyles(theme => ({
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
+  },
+  attend: {
+    margin: 'auto',
+    marginBottom: theme.spacing(2)
   }
+  
 }))
 
 
@@ -98,6 +103,23 @@ export default function Events({ match }) {
     })
   }
 
+
+  const clickSubmit = () => {
+    const event = {
+    }
+    update({
+      eventId: match.params.eventId
+    }, {
+      t: jwt.token
+    }, event).then((data) => {
+      if (data && data.error) {
+        setValues({...values, error: data.error})
+      } else {
+        setValues({...values, eventId: data._id})
+      }
+    })
+  }
+
   return (
     <Paper className={classes.root} elevation={4}>
       <Typography variant="h6" className={classes.title}>
@@ -124,8 +146,12 @@ export default function Events({ match }) {
 
                               <br></br>
 
+                              
+
                               <Button variant="contained" color="primary" size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                               <br></br>
+
+                              <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.attend}>Submit</Button>
 
                    {/* <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button>  */}
 
