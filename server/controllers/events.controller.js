@@ -19,7 +19,7 @@ const create = async (req, res) => {
 
 const list = async (req, res) => {
     try {
-      let event = await Events.find().select('_id eventName')
+      let event = await Events.find().select('_id eventName numAttending')
       res.json(event)
     } catch (err) {
       return res.status(400).json({

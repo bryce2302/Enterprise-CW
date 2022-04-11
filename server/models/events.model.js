@@ -6,6 +6,11 @@ const EventsSchema = new mongoose.Schema({
     type: String,
     trim: true,
     required: 'Event Name is required'
+  },
+  numAttending:{
+    type: Number,
+    default: 0,
+    min: 0,
   }
 })
 

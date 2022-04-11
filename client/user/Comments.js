@@ -77,6 +77,7 @@ export default function Comments() {
                                 <ListItemText primary={item.comments}/>
                                 
                                 <Button size = "small">Reply</Button>
+                                
 
                                 {auth.isAuthenticated().user._id == item.userID && 
                                 <>
