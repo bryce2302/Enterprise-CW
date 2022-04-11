@@ -10,8 +10,8 @@ router.route('/api/events')
   .post(authCtrl.requireSignin, eventsCtrl.create)
 
   
-router.route('/api/events/:eventId')
-.put(authCtrl.requireSignin,  userCtrl.update)
+// router.route('/api/events/:eventId')
+// .put(authCtrl.requireSignin,  userCtrl.update)
 
 
 router.route('/api/eventId/:userId/:eventId')
