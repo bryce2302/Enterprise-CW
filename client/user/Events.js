@@ -84,7 +84,7 @@ export default function Events() {
         <List dense>
           {events.map((item, i) => {
                   return (
-                    <Card className = {classes.commentsStyle}>
+                    <Card className = {classes.eventStyle}>
                               <ListItemText primary={item.eventName}/>
                               
                               {/* <FormControlLabel
