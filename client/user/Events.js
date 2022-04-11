@@ -28,8 +28,8 @@ const useStyles = makeStyles(theme => ({
     color: theme.palette.openTitle
   },
   attend: {
-    margin: 'auto',
-    marginBottom: theme.spacing(2)
+    marginBottom: theme.spacing(2),
+    margin: '0px 0px 12px 0px'
   }
   
 }))
