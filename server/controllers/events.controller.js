@@ -46,10 +46,22 @@ const update = async (req, res) => {
   }
 }
 
+const remove = async (req, res) => {
+  try {
+    let events = req.eventId
+    let deletedEvent = await events.remove()
+    res.json(deletedEvent)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
 
 export default {
   create,
   read,
   list,
-  update
+  update,
+  remove
 }

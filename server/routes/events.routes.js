@@ -13,4 +13,9 @@ router.route('/api/events')
 router.route('/api/events/:eventId')
 .put(authCtrl.requireSignin,  userCtrl.update)
 
+
+router.route('/api/eventId/:userId/:eventId')
+  .get(authCtrl.requireSignin, authCtrl.hasAuthorization, eventsCtrl.read)
+  .delete(authCtrl.requireSignin, authCtrl.hasAuthorization, eventsCtrl.remove)
+
 export default router
