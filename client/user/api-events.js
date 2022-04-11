@@ -50,7 +50,7 @@ const create = async (credentials,events) => {
     }
   }
 
-  const remove = async (params,credentials,user) => {
+  const remove = async (eventId,credentials,user) => {
     try {
       let response = await fetch('/api/eventId/' + user + "/" + eventId, {
         method: 'DELETE',
