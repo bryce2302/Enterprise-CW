@@ -57,7 +57,11 @@ export default function Comments() {
 
   function removeComment (comment){
     remove(comment, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
-    
+      if (data.error) {
+       // setValues({ ...values, error: data.error})
+      } else {
+       // setValues({ ...values, error: '', open: true})
+      }
       location.reload()
     })
   }
