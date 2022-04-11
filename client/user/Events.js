@@ -90,7 +90,7 @@ export default function Events({ match }) {
       } else {
        // setValues({ ...values, error: '', open: true})
       }
-      location.reload()
+      //location.reload()
     })
   }
 
