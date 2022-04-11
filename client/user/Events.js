@@ -75,6 +75,7 @@ export default function Events() {
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
                               /> */}
+                              <Checkbox checked={checked}></Checkbox>
                               <Button size = "small">Submit</Button>
 
                     </Card>
