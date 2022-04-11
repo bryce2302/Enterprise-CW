@@ -58,9 +58,8 @@ export default function EventsCreate() {
 
   const clickSubmit = () => {
     const eventsName = {
-        eventsName: values.eventsName || undefined,
-      name: auth.isAuthenticated().user.name, //gets the user name
-      userID: auth.isAuthenticated().user._id  //gets the users ID
+      eventsName: values.eventsName || undefined,
+      
     }
     create({t: jwt.token},eventsName).then((data) => {
       if (data.error) {
