@@ -9,5 +9,8 @@ router.route('/api/events')
   .get(authCtrl.requireSignin, eventsCtrl.list)
   .post(authCtrl.requireSignin, eventsCtrl.create)
 
+  
+router.route('/api/events/:eventId')
+.put(authCtrl.requireSignin, authCtrl.hasAuthorization, userCtrl.update)
 
 export default router

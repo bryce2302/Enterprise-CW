@@ -10,8 +10,7 @@ import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
-import Checkbox from "@material-ui/core/Checkbox";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
+import {update} from './api-events'
 
 
 const useStyles = makeStyles(theme => ({
@@ -43,13 +42,22 @@ export default function Events() {
 
   const [values, setValues] = useState({
     numAttending: '',
-    checked: false,
     open: false,
     error: ''
   })
 
-  const handleChange = checked => event => {
-    setValues({ ...values, [checked]: event.target.value })
+  const clickAttending = () => {
+    const numAttending = {
+      numAttending: values.numAttending || undefined
+    }
+    update({t: jwt.token},numAttending).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error})
+      } else {
+        setValues({ ...values, error: '', open: true, queryComplete: true})
+      }
+    })
+    location.reload();
   }
 
   useEffect(() => {
@@ -91,11 +99,14 @@ export default function Events() {
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
                               /> */}
-                              <Checkbox id="checkbox" checked={values.checked} onChange={handleChange('checked')}
+                              {/* <Checkbox id="checkbox" checked={values.checked} onChange={handleChange('checked')}
                               >
 
                               <label for="checkbox">do you wish to attend? </label>
-                              </Checkbox>
+                              </Checkbox> */}
+
+                    <Button id="numAttending" type="numAttending" label="Would you like to Attend:" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"/>
+
                               
 
                     </Card>

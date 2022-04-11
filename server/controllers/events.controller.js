@@ -32,9 +32,24 @@ const read = (req, res) => {
   return res.json(req.commentByID)
 }
 
+const update = async (req, res) => {
+  try {
+    let event = req.profile
+    event = extend(user, req.body)
+    event.numAddending = event.numAddending + 1
+    await event.save()
+    res.json(event)
+  } catch (err) {
+    return res.status(400).json({
+      error: errorHandler.getErrorMessage(err)
+    })
+  }
+}
+
 
 export default {
   create,
   read,
-  list
+  list,
+  update
 }
