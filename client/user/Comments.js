@@ -70,7 +70,7 @@ export default function Comments() {
 
     return (
       <Paper className={classes.root} elevation={4}>
-        <Typography margin ='auto' variant="h6" className={classes.title}>
+        <Typography margin="auto" variant="h6" className={classes.title}>
          Comments Page
         </Typography>
 
