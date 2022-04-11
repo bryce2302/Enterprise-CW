@@ -10,7 +10,9 @@ import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
-import { Checkbox } from '@material-ui/core'
+import Checkbox from "@material-ui/core/Checkbox";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -65,7 +67,11 @@ export default function Events() {
                     <Card margin="10px" paddding="10px">
                               <ListItemText primary={item.eventName}/>
                               
-                              <Checkbox defaultChecked label="Would you like to Attend"/> 
+                              <FormControlLabel
+                              control={<Checkbox checked={checked} onChange={handleChange} />}
+                              label="Check me"
+                              />
+
                     </Card>
                   )
                 })
