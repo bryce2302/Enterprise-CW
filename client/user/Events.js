@@ -85,6 +85,7 @@ export default function Events() {
                               label="Do you wish to attend this event?"
                               /> */}
                               <Checkbox checked={values.checked} onChange={handleChange('checked')}
+                              onClick="this.checked=!this.checked:"
                               label="Do you wish to attend this event?"
                                ></Checkbox>
                               
