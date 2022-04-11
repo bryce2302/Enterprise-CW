@@ -83,7 +83,7 @@ export default function EventsCreate() {
 
           <TextField id="eventName" type="eventName" label="Event Name:" className={classes.textField} value={values.eventName} onChange={handleChange('eventName')} margin="normal"/>
 
-          <TextField id="eventDesc" type="eventDesc" label="Event Description:" className={classes.textField} value={values.eventName} onChange={handleChange('eventDesc')} margin="normal"/>
+          <TextField id="eventDesc" type="eventDesc" label="Event Description:" className={classes.textField} value={values.eventDesc} onChange={handleChange('eventDesc')} margin="normal"/>
 
           <br/> {
             values.error && (<Typography component="p" color="error">
