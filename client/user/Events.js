@@ -31,12 +31,12 @@ const useStyles = makeStyles(theme => ({
 export default function Events() {
   const classes = useStyles()
   const [events, setEvents] = useState([])
-  const [checked, setChecked] = React.useState(true);
+  // const [checked, setChecked] = React.useState(true);
   const jwt = auth.isAuthenticated()
     
-  const handleChange = (event) => {
-    setChecked(event.target.checked);
-  };
+  // const handleChange = (event) => {
+  //   setChecked(event.target.checked);
+  // };
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -71,10 +71,10 @@ export default function Events() {
                     <Card margin="10px" paddding="10px">
                               <ListItemText primary={item.eventName}/>
                               
-                              <FormControlLabel
+                              {/* <FormControlLabel
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
-                              />
+                              /> */}
                               <Button size = "small">Submit</Button>
 
                     </Card>
