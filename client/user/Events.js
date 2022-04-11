@@ -109,7 +109,7 @@ export default function Events({ match }) {
                               <Button size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                         
 
-                    <Button id="numAttending" type="numAttending" label="Would you like to Attend:" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"/>
+                    <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button> 
 
                               
 
