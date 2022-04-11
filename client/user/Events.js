@@ -17,6 +17,7 @@ const useStyles = makeStyles(theme => ({
   eventStyle:{
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
+    border: `2px solid black`
   },
 
   title: {
