@@ -50,6 +50,9 @@ const Menu = withRouter(({history}) => (
           <Link to="/comments">
         <Button style={isActive(history, "/comments")}>Comments</Button>
       </Link>
+      <Link to="/events">
+        <Button style={isActive(history, "/evnts")}>Events</Button>
+      </Link>
           <Link to="/commentsCreate">
             <Button style={isActive(history, "/commentsCreate")}>Create A Comment
             </Button>
