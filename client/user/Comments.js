@@ -81,15 +81,10 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
                                 <ListItemText primary={item.comments}/>
                                 
-                                <Button backgroundColor='#b0b0b0' size = "small">Reply</Button>
                                 
-
-                                {auth.isAuthenticated().user._id == item.userID && 
-                                <>
-                                <Button size="medium">Edit</Button> 
                                 <Button size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
-                                </>
-                                  }
+                                
+                                  
                       </Card>
                     )
                   })
