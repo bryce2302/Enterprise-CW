@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
   }),
   commentsStyle:{
     margin: `5px 5px 5px 5px`,
-    backgroundColor: `#a306c7`
+    backgroundColor: `#731a65`
   },
 
   title: {
