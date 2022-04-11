@@ -18,7 +18,7 @@ const create = async (credentials,events) => {
   
   const list = async (credentials,signal) => {
     try {
-      let response = await fetch('/api/comments/', {
+      let response = await fetch('/api/events/', {
         method: 'GET',
         signal: signal,
         headers: {
