@@ -57,8 +57,8 @@ const Menu = withRouter(({history}) => (
       <Link to="/events">
         <Button style={isActive(history, "/events")}>Events</Button>
       </Link>
-      <Link to="/eventsCreated">
-        <Button style={isActive(history, "/eventsCreated")}>Events Created</Button>
+      <Link to="/eventsCreate">
+        <Button style={isActive(history, "/eventsCreate")}>Events Created</Button>
       </Link>
           
           <Button color="inherit" onClick={() => {
