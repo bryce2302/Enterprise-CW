@@ -68,7 +68,7 @@ export default function EventsCreate() {
         setValues({ ...values, error: '', open: true})
       }
     })
-    location.reload();
+    //location.reload();
   }
 
     return (<div>
