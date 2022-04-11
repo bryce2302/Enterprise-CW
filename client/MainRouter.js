@@ -13,7 +13,7 @@ import Game from './game/Game'
 import Events from './user/Events'
 import Comments from './user/Comments'
 import CommentsCreate from './user/CommentsCreate'
-
+import EventsCreate from './user/EventsCreate'
 
 
 const MainRouter = () => {
@@ -31,6 +31,7 @@ const MainRouter = () => {
         <Route path="/user/:userId" component={Profile}/>
         <Route path="/useradmin/:userId" component={UserAdmin}/>
         <Route path="/comments" component={Comments}/>
+        <Route path="/eventsCreate" component={EventsCreate}/>
 
 
       </Switch>
