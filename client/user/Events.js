@@ -106,6 +106,8 @@ export default function Events({ match }) {
 
   const clickSubmit = () => {
     const event = {
+      eventTitle: undefined,
+      eventDesc: undefined,
     }
     update({
       eventId: match.params.eventId
