@@ -47,14 +47,18 @@ export default function Events() {
   })
 
   const clickAttending = () => {
-    const numAttending = {
-      numAttending: values.numAttending || undefined
+    const event = {
+      numAttending: match.params.eventId
     }
-    update({t: jwt.token},numAttending).then((data) => {
-      if (data.error) {
-        setValues({ ...values, error: data.error})
+    update({
+      userId: match.params.eventId
+    }, {
+      t: jwt.token
+    }, event).then((data) => {
+      if (data && data.error) {
+        setValues({...values, error: data.error})
       } else {
-        setValues({ ...values, error: '', open: true, queryComplete: true})
+        setValues({...values, userId: data._id})
       }
     })
     location.reload();
@@ -77,7 +81,7 @@ export default function Events() {
     }
   }, [])
 
-
+ 
 
 
   return (
