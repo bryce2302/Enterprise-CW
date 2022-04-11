@@ -10,6 +10,7 @@ import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
+import { Checkbox } from '@material-ui/core'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -64,13 +65,7 @@ export default function Events() {
                     <Card margin="10px" paddding="10px">
                               <ListItemText primary={item.eventName}/>
                               
-                              <Button size = "small">Reply</Button>
-
-                              {auth.isAuthenticated().user._id == item.userID && 
-                              <>
-                              
-                              </>
-                                }
+                              <Checkbox {...label} defaultChecked />
                     </Card>
                   )
                 })
