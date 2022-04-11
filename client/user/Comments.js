@@ -19,7 +19,7 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(5)
   }),
   commentsStyle:{
-    margin: `5px 5px 5px 5px`,
+    margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
   },
 
