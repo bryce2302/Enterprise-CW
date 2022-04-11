@@ -84,7 +84,7 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
 
                                 <ListItemText primary={item.comments}/>
-                                <Button variant="contained" color="success" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
+                                <Button variant="contained" color="error" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
                                 
                                   
                       </Card>
