@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-
+import { createTheme } from '@mui/material/styles';
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
@@ -29,6 +29,22 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
+
+const theme = createTheme({
+  status: {
+    danger: '#e53e3e',
+  },
+  palette: {
+    primary: {
+      main: '#0971f1',
+      darker: '#053e85',
+    },
+    neutral: {
+      main: '#64748B',
+      contrastText: '#fff',
+    },
+  },
+});
 
 
 
@@ -84,8 +100,9 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
 
                                 <ListItemText primary={item.comments}/>
+                                <ThemeProvider theme={theme}>
                                 <Button variant="contained" color="error" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
-                                
+                                </ThemeProvider>
                                   
                       </Card>
                     )
