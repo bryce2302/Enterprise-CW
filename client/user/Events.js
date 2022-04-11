@@ -45,6 +45,7 @@ export default function Events() {
     open: false,
     error: ''
   })
+  const jwt = auth.isAuthenticated()
 
   const clickAttending = () => {
     const event = {
