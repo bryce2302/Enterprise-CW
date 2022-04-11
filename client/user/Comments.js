@@ -24,7 +24,6 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
-    textAlign: `center`,
     color: theme.palette.openTitle
   }
 }))
