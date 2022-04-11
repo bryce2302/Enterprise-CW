@@ -111,7 +111,8 @@ export default function Events({ match }) {
     }
     update({
       eventId: match.params.eventId
-    }, {
+    },console.log(eventId)
+    , {
       t: jwt.token
     }, event).then((data) => {
       if (data && data.error) {
@@ -119,8 +120,9 @@ export default function Events({ match }) {
       } else {
         setValues({...values, eventId: data._id})
       }
+     
     })
-    console.log(eventId)
+    
   }
 
   return (
