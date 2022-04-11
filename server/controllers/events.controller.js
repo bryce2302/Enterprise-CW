@@ -58,10 +58,28 @@ const remove = async (req, res) => {
   }
 }
 
+const eventId = async (req, res, next, id) => {
+  try {
+    let event = await Events.findById(id)
+    if (!event)
+      return res.status('400').json({
+        error: "no event found with this ID"
+      })
+    req.eventId = event
+    next()
+  } catch (err) {
+    return res.status('400').json({
+      error: "Could not retrieve comment"
+    })
+  }
+}
+
+
 export default {
   create,
   read,
   list,
   update,
-  remove
+  remove,
+  eventId
 }
