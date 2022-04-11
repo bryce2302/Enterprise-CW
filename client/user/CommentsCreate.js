@@ -73,6 +73,10 @@ export default function CommentsCreate() {
   }
 
     return (<div>
+
+{Comment && <div>
+  
+
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>
@@ -101,6 +105,8 @@ export default function CommentsCreate() {
           </Link>
         </DialogActions>
       </Dialog>
+      </div>}
     </div>
     )
+  
 }

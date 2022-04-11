@@ -52,10 +52,6 @@ const create = async (credentials,comments) => {
 
   const remove = async (commentID,credentials,user) => {
     try {
-      console.log(user)
-      console.log(commentID)
-      
-
       let response = await fetch('/api/commentsID/' + user + "/" + commentID, {
         method: 'DELETE',
         headers: {
