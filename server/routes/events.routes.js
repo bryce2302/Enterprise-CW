@@ -10,7 +10,4 @@ router.route('/api/events')
   .post(authCtrl.requireSignin, eventsCtrl.create)
 
 
-
-  
-
 export default router
