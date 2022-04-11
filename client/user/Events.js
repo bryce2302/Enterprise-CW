@@ -113,8 +113,9 @@ export default function Events({ match }) {
                     <Card className = {classes.eventStyle}>
                       
                               <ListItemText primary={item.eventName}/>
-                              <Button size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
+                             
                         
+                              <Button variant="contained" color="primary" size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
 
                    {/* <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button>  */}
 
