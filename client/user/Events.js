@@ -84,13 +84,13 @@ export default function Events({ match }) {
 
  
   function removeEvent (event){
-    remove(event, {t: auth.isAuthenticated().token}, event._id).then((data) =>{
+    remove(event, {t: auth.isAuthenticated().token}, auth.isAuthenticated().event._id).then((data) =>{
       if (data.error) {
        // setValues({ ...values, error: data.error})
       } else {
        // setValues({ ...values, error: '', open: true})
       }
-      //location.reload()
+      location.reload()
     })
   }
 
@@ -107,7 +107,7 @@ export default function Events({ match }) {
           {events.map((item, i) => {
                   return (
                     <Card className = {classes.eventStyle}>
-
+                      
                               <ListItemText primary={item.eventName}/>
                               <Button size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                         
