@@ -83,14 +83,14 @@ export default function Events({ match }) {
   }, [])
 
  
-  function removeEvent (events){
-    remove(events, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id ).then((data) =>{
+  function removeEvent (event){
+    remove(event, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
       if (data.error) {
        // setValues({ ...values, error: data.error})
       } else {
        // setValues({ ...values, error: '', open: true})
       }
-      /**location.reload() */
+      location.reload()
     })
   }
 
