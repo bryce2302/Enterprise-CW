@@ -48,17 +48,20 @@ export default function EventsCreate() {
 
   const [values, setValues] = useState({
     eventName: '',
+    eventDesc: '',
     open: false,
     error: ''
   })
 
   const handleChange = eventName => event => {
     setValues({ ...values, [eventName]: event.target.value })
+    setValues({ ...values, [eventDesc]: event.target.value })
   }
 
   const clickSubmit = () => {
     const eventName = {
       eventName: values.eventName || undefined,
+      eventName: values.eventDesc || undefined,
       
     }
     create({t: jwt.token},eventName).then((data) => {
@@ -77,7 +80,11 @@ export default function EventsCreate() {
           <Typography variant="h6" className={classes.title}>
             New Event
           </Typography>
-          <TextField id="eventName" type="eventName" label="Event:" className={classes.textField} value={values.eventName} onChange={handleChange('eventName')} margin="normal"/>
+
+          <TextField id="eventName" type="eventName" label="Event Name:" className={classes.textField} value={values.eventName} onChange={handleChange('eventName')} margin="normal"/>
+
+          <TextField id="eventDesc" type="eventDesc" label="Event Description:" className={classes.textField} value={values.eventName} onChange={handleChange('eventDesc')} margin="normal"/>
+
           <br/> {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
