@@ -14,12 +14,15 @@ import {update} from './api-events'
 import {remove} from './api-events'
 
 const useStyles = makeStyles(theme => ({
+  root: theme.mixins.gutters({
+    padding: theme.spacing(1),
+    margin: theme.spacing(5)
+  }),
   eventStyle:{
     margin: `5px 5px 12px 5px`,
     backgroundColor: `#f6dcf7`,
-    border: `2px solid black`
+    border: `2px solid grey`
   },
-
   title: {
     margin: `${theme.spacing(4)}px 0 ${theme.spacing(2)}px`,
     color: theme.palette.openTitle
