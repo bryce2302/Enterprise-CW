@@ -65,7 +65,7 @@ export default function Events() {
                     <Card margin="10px" paddding="10px">
                               <ListItemText primary={item.eventName}/>
                               
-                              <Checkbox {...label} defaultChecked />
+                              <Checkbox defaultChecked />
                     </Card>
                   )
                 })
