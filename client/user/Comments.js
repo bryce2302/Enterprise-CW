@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
@@ -11,6 +11,15 @@ import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
 import {remove} from './api-comments.js'
+import { createMuiTheme } from '@material-ui/core/styles';
+import blue from '@material-ui/core/colors/blue';
+
+const theme = createMuiTheme({
+  palette: {
+    primary: { main: '#64748B' }
+  },
+});
+
 
 
 const useStyles = makeStyles(theme => ({
@@ -29,15 +38,6 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-
-const theme = createTheme({
-  palette: {
-    neutral: {
-      main: '#64748B',
-      contrastText: '#fff',
-    },
-  },
-});
 
 
 
@@ -93,9 +93,9 @@ export default function Comments() {
                       <Card className = {classes.commentsStyle}>
 
                                 <ListItemText primary={item.comments}/>
-                                <ThemeProvider theme={theme}>
-                                <Button variant="contained" color="error" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
-                                </ThemeProvider>
+                                <MuiThemeProvider  theme={theme}>
+                                <Button variant="contained" color="primary" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
+                                </MuiThemeProvider>
                                   
                       </Card>
                     )
