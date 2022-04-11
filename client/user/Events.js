@@ -107,17 +107,10 @@ export default function Events({ match }) {
           {events.map((item, i) => {
                   return (
                     <Card className = {classes.eventStyle}>
+                      
                               <ListItemText primary={item.eventName}/>
                               <Button size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
-                              {/* <FormControlLabel
-                              control={<Checkbox checked={checked} onChange={handleChange} />}
-                              label="Do you wish to attend this event?"
-                              /> */}
-                              {/* <Checkbox id="checkbox" checked={values.checked} onChange={handleChange('checked')}
-                              >
-
-                              <label for="checkbox">do you wish to attend? </label>
-                              </Checkbox> */}
+                        
 
                     <Button id="numAttending" type="numAttending" label="Would you like to Attend:" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"/>
 
