@@ -62,7 +62,6 @@ export default function EventsCreate() {
     const eventName = {
       eventName: values.eventName || undefined,
       eventDesc: values.eventDesc || undefined,
-      
     }
     create({t: jwt.token},eventName).then((data) => {
       if (data.error) {

@@ -110,14 +110,14 @@ export default function Events({ match }) {
       eventDesc: undefined,
     }
     update({
-      eventId: match.params.eventId
+      userId: match.params.userId
     }, {
       t: jwt.token
     }, event).then((data) => {
       if (data && data.error) {
         setValues({...values, error: data.error})
       } else {
-        setValues({...values, eventId: data._id})
+        setValues({...values, userId: data._id})
       }
     })
   }
