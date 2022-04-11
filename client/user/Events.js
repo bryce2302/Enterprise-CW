@@ -31,12 +31,36 @@ const useStyles = makeStyles(theme => ({
 export default function Events() {
   const classes = useStyles()
   const [events, setEvents] = useState([])
-  // const [checked, setChecked] = React.useState(true);
+  
   const jwt = auth.isAuthenticated()
     
-  // const handleChange = (event) => {
-  //   setChecked(event.target.checked);
-  // };
+ 
+
+  const [values, setValues] = useState({
+    numAttending: '',
+    checked: false,
+    open: false,
+    error: ''
+  })
+
+  const handleChange = numAttending => event => {
+    setValues({ ...values, [numAttending]: event.target.value })
+  }
+
+  const clickSubmit = () => {
+    const numAttending = {
+      numAttending: values.numAttending || undefined
+    }
+    create({t: jwt.token},numAttending).then((data) => {
+      if (data.error) {
+        setValues({ ...values, error: data.error})
+      } else {
+        setValues({ ...values, error: '', open: true})
+      }
+    })
+    location.reload();
+  }
+
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -75,14 +99,13 @@ export default function Events() {
                               control={<Checkbox checked={checked} onChange={handleChange} />}
                               label="Do you wish to attend this event?"
                               /> */}
-                              <Checkbox ></Checkbox>
+                              <Checkbox checked={values.checked} onChange={handleChange('checked')} ></Checkbox>
                               
 
                     </Card>
                   )
                 })
           }
-        <Button size = "small">Submit</Button>
         </List>
       </CardContent>
     </Paper>
