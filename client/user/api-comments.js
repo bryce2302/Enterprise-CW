@@ -50,9 +50,9 @@ const create = async (credentials,comments) => {
     }
   }
 
-  const remove = async (credentials,params) => {
+  const remove = async (comment,credentials,user) => {
     try {
-      let response = await fetch('/api/comments/' + params.commentsId, {
+      let response = await fetch('/api/comments/' + user + "/" + comment, {
         method: 'DELETE',
         headers: {
           'Accept': 'application/json',
