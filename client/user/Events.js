@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-import TextField from '@material-ui/core/TextField'
+
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
@@ -12,8 +12,6 @@ import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
 import {update} from './api-events'
 import {remove} from './api-events'
-import {read} from './api-events'
-
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -42,11 +40,7 @@ const useStyles = makeStyles(theme => ({
 
 export default function Events({ match }) {
   const classes = useStyles()
-  const [events, setEvents] = useState({
-  eventTitle: '',
-  eventDesc: ''})
-
-
+  const [events, setEvents] = useState([])
   
   const jwt = auth.isAuthenticated()
     
@@ -109,29 +103,11 @@ export default function Events({ match }) {
     })
   }
 
-  // useEffect(() => {
-  //   const abortController = new AbortController()
-  //   const signal = abortController.signal
-
-  //   read({
-  //     eventId: match.params.eventId
-  //   }, {t: jwt.token}, signal).then((data) => {
-  //     if (data && data.error) {
-  //       setValues({...values, error: data.error})
-  //     } else {
-  //       setValues({...values, eventTitle: data.eventTitle, eventDesc: data.eventTitle})
-  //     }
-  //   })
-  //   return function cleanup(){
-  //     abortController.abort()
-  //   }
-
-  // }, [match.params.eventId])
 
   const clickSubmit = () => {
     const event = {
-      eventTitle: values.eventTitle ||undefined,
-      eventDesc: values.eventDesc || undefined,
+      eventTitle: undefined,
+      eventDesc: undefined,
     }
     update({
       eventId: match.params.eventId
@@ -149,10 +125,6 @@ export default function Events({ match }) {
     
   }
 
-  // const handleChange = events => event => {
-  //   setValues({...values, [event]: events.target.value})
-  // }
-
   return (
     <Paper className={classes.root} elevation={4}>
       <Typography variant="h6" className={classes.title}>
@@ -169,13 +141,9 @@ export default function Events({ match }) {
                       
                               Event Title: <ListItemText primary={item.eventName}/>
 
-                              {/* <TextField id="editTitle" type="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/> */}
-
                               <br></br>
 
                               Event Description: <ListItemText primary={item.eventDesc}/>
-
-                              {/* <TextField id="editDesc" label="Edit Description" className={classes.textField} value={values.editDesc} onChange={handleChange('editDesc')} margin="normal"/> */}
 
                               <br></br>
 
