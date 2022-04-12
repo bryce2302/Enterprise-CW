@@ -14,6 +14,7 @@ import Events from './user/Events'
 import Comments from './user/Comments'
 import CommentsCreate from './user/CommentsCreate'
 import EventsCreate from './user/EventsCreate'
+import App from './App'
 
 
 const MainRouter = () => {
@@ -32,7 +33,6 @@ const MainRouter = () => {
         <Route path="/useradmin/:userId" component={UserAdmin}/>
         <Route path="/comments" component={Comments}/>
         <Route path="/eventsCreate" component={EventsCreate}/>
-
 
       </Switch>
     </div>)
