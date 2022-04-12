@@ -103,11 +103,29 @@ export default function Events({ match }) {
     })
   }
 
+  useEffect(() => {
+    const abortController = new AbortController()
+    const signal = abortController.signal
+
+    read({
+      eventId: match.params.eventId
+    }, {t: jwt.token}, signal).then((data) => {
+      if (data && data.error) {
+        setValues({...values, error: data.error})
+      } else {
+        setValues({...values, eventTitle: data.eventTitle, eventDesc: data.eventTitle})
+      }
+    })
+    return function cleanup(){
+      abortController.abort()
+    }
+
+  }, [match.params.eventId])
 
   const clickSubmit = () => {
     const event = {
-      eventTitle: undefined,
-      eventDesc: undefined,
+      eventTitle: values.eventTitle ||undefined,
+      eventDesc: values.eventDesc || undefined,
     }
     update({
       eventId: match.params.eventId
@@ -125,6 +143,10 @@ export default function Events({ match }) {
     
   }
 
+  const handleChange = events => event => {
+    setValues({...values, [name]: events.target.value})
+  }
+
   return (
     <Paper className={classes.root} elevation={4}>
       <Typography variant="h6" className={classes.title}>
@@ -140,6 +162,7 @@ export default function Events({ match }) {
                     <Card className = {classes.eventStyle}>
                       
                               Event Title: <ListItemText primary={item.eventName}/>
+                              <TextField id="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/>
 
                               <br></br>
 

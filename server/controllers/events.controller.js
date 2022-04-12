@@ -35,6 +35,7 @@ const read = (req, res) => {
 const update = async (req, res) => {
   try {
     let event = req.profile
+    event = extend (event, req.body)
     event.numAddending = event.numAddending + 1
     await event.save()
     res.json(event)
