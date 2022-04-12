@@ -53,26 +53,6 @@ export default function Events({ match }) {
   })
 
  
-  /** const clickAttending = () => {
-    const event = {
-      numAttending: values.numAttending || undefined
-    }
-    update({
-      eventId: match.params.eventId
-    }, {
-      t: jwt.token
-    }, event).then((data) => {
-      if (data && data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, userId: data._id}) 
-        
-      }
-    })
-    location.reload();
-  }
-  */
-
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -106,14 +86,14 @@ export default function Events({ match }) {
 
 
   
-    function updateEvents(){
+    function updateEvents(toUpdate){
       const updateEvent = {
-        eventTitle: events.eventTitle,
-        eventDesc: events.eventDesc,
-        numAttending: events.numAttending + 1
+        eventTitle: toUpdate.eventTitle,
+        eventDesc: toUpdate.eventDesc,
+        numAttending: toUpdate.numAttending + 1
       }
     
-      update(events._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
+      update(toUpdate._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
         if (data && data.error){
     
         } else {
@@ -155,7 +135,7 @@ export default function Events({ match }) {
                               <Button variant="contained" color="primary" size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                               <br></br>
 
-                              <Button color="primary" variant="contained" onClick={() => updateEvents()} className={classes.attend}>Attend this Event</Button>
+                              <Button color="primary" variant="contained" onClick={() => updateEvents(item)} className={classes.attend}>Attend this Event</Button>
 
                    {/* <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button>  */}
 
