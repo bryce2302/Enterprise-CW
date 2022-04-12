@@ -54,26 +54,6 @@ export default function Events({ match }) {
   })
 
  
-  /** const clickAttending = () => {
-    const event = {
-      numAttending: values.numAttending || undefined
-    }
-    update({
-      eventId: match.params.eventId
-    }, {
-      t: jwt.token
-    }, event).then((data) => {
-      if (data && data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, userId: data._id}) 
-        
-      }
-    })
-    location.reload();
-  }
-  */
-
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -93,19 +73,6 @@ export default function Events({ match }) {
       abortController.abort()
     }
   }, [match.params.eventId])
-
- 
-  function removeEvent (event){
-    remove(event, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
-      if (data.error) {
-       // setValues({ ...values, error: data.error})
-      } else {
-       // setValues({ ...values, error: '', open: true})
-      }
-      location.reload()
-    })
-  }
-
 
   const clickSubmit = () => {
     const event = {
@@ -127,6 +94,19 @@ export default function Events({ match }) {
     })
     
   }
+ 
+  function removeEvent (event){
+    remove(event, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id).then((data) =>{
+      if (data.error) {
+       // setValues({ ...values, error: data.error})
+      } else {
+       // setValues({ ...values, error: '', open: true})
+      }
+      location.reload()
+    })
+  }
+
+
 
   return (
     <Paper className={classes.root} elevation={4}>

@@ -89,6 +89,7 @@ export default function EditProfile({ match }) {
       }
     })
   }
+  
   const handleChange = name => event => {
     setValues({...values, [name]: event.target.value})
   }
