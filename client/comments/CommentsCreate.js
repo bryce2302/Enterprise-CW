@@ -7,14 +7,14 @@ import TextField from '@material-ui/core/TextField'
 import Typography from '@material-ui/core/Typography'
 import Icon from '@material-ui/core/Icon'
 import { makeStyles } from '@material-ui/core/styles'
-import {create} from './api-events.js'
+import {create} from './api-comments'
 import Dialog from '@material-ui/core/Dialog'
 import DialogActions from '@material-ui/core/DialogActions'
 import DialogContent from '@material-ui/core/DialogContent'
 import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogTitle from '@material-ui/core/DialogTitle'
 import {Link} from 'react-router-dom'
-import auth from './../auth/auth-helper'
+import auth from '../auth/auth-helper'
 
 const useStyles = makeStyles(theme => ({
   card: {
@@ -42,48 +42,48 @@ const useStyles = makeStyles(theme => ({
   }
 }))
 
-export default function EventsCreate() {
+export default function CommentsCreate() {
   const classes = useStyles()
   const jwt = auth.isAuthenticated()
 
   const [values, setValues] = useState({
-    eventName: '',
-    eventDesc: '',
+    comments: '',
+    queryComplete: undefined,
     open: false,
     error: ''
   })
 
-  const handleChange = eventName => event => {
-    setValues({ ...values, [eventName]: event.target.value })
-    
+  const handleChange = comments => event => {
+    setValues({ ...values, [comments]: event.target.value })
   }
 
   const clickSubmit = () => {
-    const eventName = {
-      eventName: values.eventName || undefined,
-      eventDesc: values.eventDesc || undefined,
+    const comments = {
+      comments: values.comments || undefined,
+      name: auth.isAuthenticated().user.name, //gets the user name
+      userID: auth.isAuthenticated().user._id  //gets the users ID
     }
-    create({t: jwt.token},eventName).then((data) => {
+    create({t: jwt.token},comments).then((data) => {
       if (data.error) {
         setValues({ ...values, error: data.error})
       } else {
-        setValues({ ...values, error: '', open: true})
+        setValues({ ...values, error: '', open: true, queryComplete: true})
       }
     })
     location.reload();
   }
 
     return (<div>
+
+{/* {values.queryComplete && <div> */}
+  
+
       <Card className={classes.card}>
         <CardContent>
           <Typography variant="h6" className={classes.title}>
-            New Event
+            New Comment
           </Typography>
-
-          <TextField id="eventName" type="eventName" label="Event Name:" className={classes.textField} value={values.eventName} onChange={handleChange('eventName')} margin="normal"/>
-
-          <TextField multiline rows="2" id="eventDesc" type="eventDesc" label="Event Description:" className={classes.textField} value={values.eventDesc} onChange={handleChange('eventDesc')} margin="normal"/>
-
+          <TextField id="comments" type="comments" label="Comment:" className={classes.textField} value={values.comments} onChange={handleChange('comments')} margin="normal"/>
           <br/> {
             values.error && (<Typography component="p" color="error">
               <Icon color="error" className={classes.error}>error</Icon>
@@ -95,17 +95,19 @@ export default function EventsCreate() {
         </CardActions>
       </Card>
       <Dialog open={values.open} disableBackdropClick={true}>
-        <DialogTitle>New Event</DialogTitle>
+        <DialogTitle>New Comment</DialogTitle>
         <DialogContent>
           <DialogContentText>
-            New Event successfully created.
+            New comment successfully created.
           </DialogContentText>
         </DialogContent>
         <DialogActions>
-          <Link to="/events">
+          <Link to="/comments">
           </Link>
         </DialogActions>
       </Dialog>
-    </div>
+      </div>
+      //}</div>
     )
+  
 }

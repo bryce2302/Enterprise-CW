@@ -5,7 +5,7 @@ import Typography from '@material-ui/core/Typography'
 
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
-import auth from './../auth/auth-helper'
+import auth from '../auth/auth-helper'
 import { CardContent } from '@material-ui/core'
 import Card from '@material-ui/core/Card'
 import Button from '@material-ui/core/Button'
