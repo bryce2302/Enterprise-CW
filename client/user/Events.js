@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography'
-
+import TextField from '@material-ui/core/TextField'
 import List from '@material-ui/core/List'
 import ListItemText from '@material-ui/core/ListItemText'
 import auth from './../auth/auth-helper'
@@ -164,7 +164,8 @@ export default function Events({ match }) {
                     <Card className = {classes.eventStyle}>
                       
                               Event Title: <ListItemText primary={item.eventName}/>
-                              <TextField id="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/>
+
+                              <TextField id="editTitle" type="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/>
 
                               <br></br>
 
