@@ -35,6 +35,7 @@ const create = async (credentials,events) => {
 
   const update = async (eventId,credentials, userId, newEvent) => {
     try {
+      console.log(JSON.stringify(newEvent))
       let response = await fetch('/api/eventId/' + userId + "/" + eventId, {
         method: 'PUT',
         headers: {
