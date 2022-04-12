@@ -41,18 +41,8 @@ const useStyles = makeStyles(theme => ({
 export default function Events({ match }) {
   const classes = useStyles()
   const [events, setEvents] = useState([])
-  
   const jwt = auth.isAuthenticated()
     
- 
-
-  const [values, setValues] = useState({
-    numAttending: '',
-    open: false,
-    error: ''
-  })
-
- 
 
   useEffect(() => {
     const abortController = new AbortController()
@@ -86,7 +76,7 @@ export default function Events({ match }) {
 
 
   
-    function updateEvents(toUpdate){
+  function updateEvents(toUpdate){
       const updateEvent = {
         eventTitle: toUpdate.eventTitle,
         eventDesc: toUpdate.eventDesc,
@@ -101,7 +91,7 @@ export default function Events({ match }) {
         }
         location.reload()
       })
-    }
+  }
     
   
 
