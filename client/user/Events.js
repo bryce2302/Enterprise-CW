@@ -99,6 +99,7 @@ export default function Events({ match }) {
         } else {
     
         }
+        location.reload()
       })
     }
     
