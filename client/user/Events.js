@@ -104,43 +104,25 @@ export default function Events({ match }) {
   }
 
 
-function updateEvent(){
-  const updateEvent = {
-    eventTitle: event.eventTitle,
-    eventDesc: event.eventDesc,
-    numAttending: event.numAttending
-    
-  }
 
-  update(event._id, auth.isAuthenticated().token, auth.isAuthenticated().user._id, updateEvent).then((data) => {
-    if (data && data.error){
-
-    } else {
-
-    }
-  })
-}
-
-  const clickSubmit = () => {
-    const event = {
-      eventTitle: undefined,
-      eventDesc: undefined,
-    }
-    update({
-      eventId: match.params.eventId
-    }
-    , {
-      t: jwt.token
-    }, event).then((data) => {
-      if (data && data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, eventId: data._id})
+  
+    function updateEvents(){
+      const updateEvent = {
+        eventTitle: event.eventTitle,
+        eventDesc: event.eventDesc,
+        numAttending: event.numAttending + 1
       }
-     
-    })
     
-  }
+      update(event._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
+        if (data && data.error){
+    
+        } else {
+    
+        }
+      })
+    }
+    
+  
 
   return (
     <Paper className={classes.root} elevation={4}>
@@ -173,7 +155,7 @@ function updateEvent(){
                               <Button variant="contained" color="primary" size="medium" onClick={() => removeEvent(item._id)}>Delete</Button>
                               <br></br>
 
-                              <Button color="primary" variant="contained" onClick={clickSubmit} className={classes.attend}>Attend this Event</Button>
+                              <Button color="primary" variant="contained" onClick={() => updateEvents()} className={classes.attend}>Attend this Event</Button>
 
                    {/* <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button>  */}
 
