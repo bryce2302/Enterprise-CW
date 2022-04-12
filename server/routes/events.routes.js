@@ -11,7 +11,7 @@ router.route('/api/events')
   
 
 router.route('/api/events/:eventId')
-.put(authCtrl.requireSignin, authCtrl.hasAuthorization, eventsCtrl.update)
+.put(authCtrl.requireSignin,  eventsCtrl.update)
   
 
 router.route('/api/eventId/:userId/:eventId')
