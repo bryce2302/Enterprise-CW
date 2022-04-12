@@ -109,24 +109,24 @@ export default function Events({ match }) {
     })
   }
 
-  useEffect(() => {
-    const abortController = new AbortController()
-    const signal = abortController.signal
+  // useEffect(() => {
+  //   const abortController = new AbortController()
+  //   const signal = abortController.signal
 
-    read({
-      eventId: match.params.eventId
-    }, {t: jwt.token}, signal).then((data) => {
-      if (data && data.error) {
-        setValues({...values, error: data.error})
-      } else {
-        setValues({...values, eventTitle: data.eventTitle, eventDesc: data.eventTitle})
-      }
-    })
-    return function cleanup(){
-      abortController.abort()
-    }
+  //   read({
+  //     eventId: match.params.eventId
+  //   }, {t: jwt.token}, signal).then((data) => {
+  //     if (data && data.error) {
+  //       setValues({...values, error: data.error})
+  //     } else {
+  //       setValues({...values, eventTitle: data.eventTitle, eventDesc: data.eventTitle})
+  //     }
+  //   })
+  //   return function cleanup(){
+  //     abortController.abort()
+  //   }
 
-  }, [match.params.eventId])
+  // }, [match.params.eventId])
 
   const clickSubmit = () => {
     const event = {
@@ -149,9 +149,9 @@ export default function Events({ match }) {
     
   }
 
-  const handleChange = events => event => {
-    setValues({...values, [event]: events.target.value})
-  }
+  // const handleChange = events => event => {
+  //   setValues({...values, [event]: events.target.value})
+  // }
 
   return (
     <Paper className={classes.root} elevation={4}>
@@ -169,12 +169,13 @@ export default function Events({ match }) {
                       
                               Event Title: <ListItemText primary={item.eventName}/>
 
-                              <TextField id="editTitle" type="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/>
+                              {/* <TextField id="editTitle" type="editTitle" label="Edit Title" className={classes.textField} value={values.editTitle} onChange={handleChange('editTitle')} margin="normal"/><br/> */}
 
                               <br></br>
 
                               Event Description: <ListItemText primary={item.eventDesc}/>
-                              <TextField id="editDesc" label="Edit Description" className={classes.textField} value={values.editDesc} onChange={handleChange('editDesc')} margin="normal"/>
+
+                              {/* <TextField id="editDesc" label="Edit Description" className={classes.textField} value={values.editDesc} onChange={handleChange('editDesc')} margin="normal"/> */}
 
                               <br></br>
 
