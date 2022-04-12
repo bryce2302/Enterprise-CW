@@ -33,7 +33,7 @@ const create = async (credentials,events) => {
     }
   }
 
-  const update = async (eventId,credentials, userId) => {
+  const update = async (eventId,credentials, userId, newEvent) => {
     try {
       let response = await fetch('/api/events/' + userId + "/" + eventId, {
         method: 'PUT',
@@ -42,7 +42,7 @@ const create = async (credentials,events) => {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + credentials.t
         },
-        body: JSON.stringify(event)
+        body: JSON.stringify(newEvent)
       })
       return await response.json()
     } catch(err) {
