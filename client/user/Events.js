@@ -104,6 +104,23 @@ export default function Events({ match }) {
   }
 
 
+function updateEvent(){
+  const updateEvent = {
+    eventTitle: event.eventTitle,
+    eventDesc: event.eventDesc,
+    numAttending: event.numAttending
+    
+  }
+
+  update(event._id, auth.isAuthenticated().token, auth.isAuthenticated().user._id, updateEvent).then((data) => {
+    if (data && data.error){
+
+    } else {
+
+    }
+  })
+}
+
   const clickSubmit = () => {
     const event = {
       eventTitle: undefined,
