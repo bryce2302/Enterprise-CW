@@ -92,6 +92,24 @@ export default function Events({ match }) {
         location.reload()
       })
   }
+
+  function updateEventsUnattend(toUpdate){
+    const updateEvent = {
+      eventTitle: toUpdate.eventTitle,
+      eventDesc: toUpdate.eventDesc,
+      numAttending: toUpdate.numAttending - 1
+    }
+  
+    update(toUpdate._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
+      if (data && data.error){
+  
+      } else {
+  
+      }
+      location.reload()
+    })
+}
+  
     
   
 
@@ -127,6 +145,7 @@ export default function Events({ match }) {
                               <br></br>
 
                               <Button color="primary" variant="contained" onClick={() => updateEvents(item)} className={classes.attend}>Attend this Event</Button>
+                              <Button color="primary" variant="contained" onClick={() => updateEventsUnattend(item)} className={classes.attend}>Unattend this Event</Button>
 
                    {/* <Button id="numAttending" type="numAttending" className={classes.textField} value={values.numAttending} onClick={clickAttending} margin="normal"> Attend Event </Button>  */}
 
