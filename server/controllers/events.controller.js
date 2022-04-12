@@ -36,7 +36,6 @@ const update = async (req, res) => {
   try {
     let event = req.profile
     event = extend (event, req.body)
-    event.numAttending = event.numAttending + 1
     await event.save()
     res.json(event)
   } catch (err) {
