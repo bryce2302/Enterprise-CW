@@ -69,22 +69,46 @@ export default function Comments() {
   }
 
 
+
     return (
       <Paper className={classes.root} elevation={4}>
         <Typography variant="h6" className={classes.title}>
 
         Comments Page
         
-         
+   
         </Typography>
 
         <CardContent>
           <List dense>
             {comments.map((item, i) => {
+                const created = new Date(item.created)
+                const year = created.getFullYear();
+                const month = created.getMonth();
+                const day = created.getDate();
+                const hours = created.getHours(); 
+                const minutes = created.getMinutes(); 
+                const seconds = created.getSeconds(); 
+                
+                const addZero = (num) => `${num}`.padStart(2, '0');
+              
+                const formatted =
+                  year +
+                  '-' +
+                  addZero(month + 1) +
+                  '-' +
+                  addZero(day) +
+                  ' ' +
+                  addZero(hours) +
+                  ':' +
+                  addZero(minutes) +
+                  ':' +
+                  addZero(seconds);
                     return (
                       <Card className = {classes.commentsStyle}>
+                        
 
-                                Comment: <ListItemText primary={item.comments}/>
+                                Comment: <ListItemText primary={formatted}/>
                                
                                 Date Posted: <ListItemText primary={item.created}/>
                                 <Button variant="contained" color="primary" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
