@@ -167,6 +167,7 @@ export default function Events({ match }) {
                               <br></br>
 
                               Event Description: <ListItemText primary={item.eventDesc}/>
+                              <TextField id="editDesc" label="Edit Description" className={classes.textField} value={values.editDesc} onChange={handleChange('editDesc')} margin="normal"/>
 
                               <br></br>
 
