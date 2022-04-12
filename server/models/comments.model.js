@@ -17,8 +17,10 @@ const CommentsSchema = new mongoose.Schema({
     trim: true,
     required: 'Comment is required'
   },
-  datePosted: {
-    type: Date
+  datePosted: Date,
+  created: {
+    type: Date,
+    default: Date.now
   }
 })
 
