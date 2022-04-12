@@ -55,24 +55,24 @@ export default function Events({ match }) {
 
  
 
-  useEffect(() => {
-    const abortController = new AbortController()
-    const signal = abortController.signal
+  // useEffect(() => {
+  //   const abortController = new AbortController()
+  //   const signal = abortController.signal
 
-    // read({
-    //   eventId: match.params.eventId
-    // }, {t: jwt.token},signal).then((data) => {
-    //   if (data && data.error) {
-    //     console.log(data.error)
-    //   } else {
-    //     setEvents(data)
-    //   }
-    // })
+  //   // read({
+  //   //   eventId: match.params.eventId
+  //   // }, {t: jwt.token},signal).then((data) => {
+  //   //   if (data && data.error) {
+  //   //     console.log(data.error)
+  //   //   } else {
+  //   //     setEvents(data)
+  //   //   }
+  //   // })
 
-    return function cleanup(){
-      abortController.abort()
-    }
-  }, [match.params.eventId])
+  //   return function cleanup(){
+  //     abortController.abort()
+  //   }
+  // }, [match.params.eventId])
 
   const clickSubmit = () => {
     const event = {
