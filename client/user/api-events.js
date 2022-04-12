@@ -35,7 +35,7 @@ const create = async (credentials,events) => {
 
   const update = async (eventId,credentials, userId, newEvent) => {
     try {
-      let response = await fetch('/api/events/' + userId + "/" + eventId, {
+      let response = await fetch('/api/eventId/' + userId + "/" + eventId, {
         method: 'PUT',
         headers: {
           'Accept': 'application/json',
