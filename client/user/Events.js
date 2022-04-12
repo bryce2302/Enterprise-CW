@@ -12,7 +12,7 @@ import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
 import {update} from './api-events'
 import {remove} from './api-events'
-import { read } from './api-user'
+import { read } from './api-events'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
