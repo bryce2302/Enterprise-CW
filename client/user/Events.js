@@ -42,7 +42,12 @@ const useStyles = makeStyles(theme => ({
 
 export default function Events({ match }) {
   const classes = useStyles()
-  const [events, setEvents] = useState([])
+  const [events, setEvents] = useState({
+  eventTitle: '',
+  eventDesc: ''
+})
+
+
   
   const jwt = auth.isAuthenticated()
     
