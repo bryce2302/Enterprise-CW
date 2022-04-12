@@ -86,7 +86,7 @@ export default function Comments() {
 
                                 Comment: <ListItemText primary={item.comments}/>
                                
-                                Date Posted: <ListItemText primary={item.datePosted}/>
+                                Date Posted: <ListItemText primary={item.created}/>
                                 <Button variant="contained" color="primary" size="medium" onClick={() => removeComment(item._id)}>Delete</Button>
                          
                                   
