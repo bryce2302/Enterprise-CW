@@ -108,12 +108,12 @@ export default function Events({ match }) {
   
     function updateEvents(){
       const updateEvent = {
-        eventTitle: event.eventTitle,
-        eventDesc: event.eventDesc,
-        numAttending: event.numAttending + 1
+        eventTitle: events.eventTitle,
+        eventDesc: events.eventDesc,
+        numAttending: events.numAttending + 1
       }
     
-      update(event._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
+      update(events._id, {t: auth.isAuthenticated().token}, auth.isAuthenticated().user._id, updateEvent).then((data) => {
         if (data && data.error){
     
         } else {
