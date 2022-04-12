@@ -12,6 +12,7 @@ import Button from '@material-ui/core/Button'
 import {list} from './api-events.js'
 import {update} from './api-events'
 import {remove} from './api-events'
+import { read } from './api-user'
 
 const useStyles = makeStyles(theme => ({
   root: theme.mixins.gutters({
@@ -78,7 +79,9 @@ export default function Events({ match }) {
     const abortController = new AbortController()
     const signal = abortController.signal
 
-    list({t: jwt.token},signal).then((data) => {
+    read({
+      eventId: match.params.eventId
+    }, {t: jwt.token},signal).then((data) => {
       if (data && data.error) {
         console.log(data.error)
       } else {
@@ -89,7 +92,7 @@ export default function Events({ match }) {
     return function cleanup(){
       abortController.abort()
     }
-  }, [])
+  }, [match.params.eventId])
 
  
   function removeEvent (event){
