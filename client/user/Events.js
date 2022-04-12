@@ -150,7 +150,7 @@ export default function Events({ match }) {
   }
 
   const handleChange = events => event => {
-    setValues({...values, [name]: events.target.value})
+    setValues({...values, [event]: events.target.value})
   }
 
   return (
