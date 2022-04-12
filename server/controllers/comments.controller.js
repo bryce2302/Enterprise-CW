@@ -8,6 +8,7 @@ const create = async (req, res) => {
   const comment = new Comments(req.body)
   try {
     await comment.save()
+    datePosted = Date
     return res.status(200).json({
       message: "Successfully sent comment !"
     })
